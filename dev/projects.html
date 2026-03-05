@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de projets de Real Dosenaterro - Applications web, sites vitrines, e-commerce et solutions digitales.">
+  <meta name="theme-color" content="#FCFCFF">
+  
+  <title>Projets | Real Dosenaterro - Développeur Web</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-dark': '#052F5F',
+            'primary-teal': '#005377',
+            'accent-green': '#06A77D',
+            'bg-primary': '#FCFCFF',
+            'bg-secondary': '#F0F4F8',
+          },
+          fontFamily: {
+            'heading': ['Space Grotesk', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  
+  <!-- CSS Personnalisé -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body x-data="{ loaded: false, filter: 'all' }" x-init="setTimeout(() => loaded = true, 1800)">
+  
+  <!-- LOADER GLOBAL -->
+  <div class="page-loader" :class="{ 'hidden': loaded }">
+    <div class="loader-logo">
+      <span>R</span><span>D</span><span>.</span><span>D</span><span>EV</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+  
+  <!-- CURSEUR PERSONNALISÉ -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-container">
+      <a href="./index.html" class="navbar-logo" aria-label="Accueil">
+        <span class="navbar-logo-icon">RD</span>
+        <span>Real Dosenaterro</span>
+      </a>
+      
+      <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="navbar-menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="./index.html" class="navbar-link" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="./about.html" class="navbar-link" role="menuitem">À propos</a></li>
+        <li role="none"><a href="./projects.html" class="navbar-link active" role="menuitem" aria-current="page">Projets</a></li>
+        <li role="none"><a href="./services.html" class="navbar-link" role="menuitem">Services</a></li>
+        <li role="none"><a href="./blog.html" class="navbar-link" role="menuitem">Blog</a></li>
+        <li role="none"><a href="./contact.html" class="navbar-cta" role="menuitem">Me contacter</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 50vh;" aria-labelledby="projects-title">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow" style="top: 5%; right: -5%;"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="reveal">
+          <span class="section-label">Portfolio</span>
+          <h1 id="projects-title" class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">
+            Projets <span class="text-accent">sélectionnés</span>
+          </h1>
+          <p class="hero-description" style="max-width: 600px;">
+            Une sélection de réalisations qui illustrent mon expertise en développement web et ma capacité à m'adapter à différents besoins.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FILTRES -->
+    <section class="section" style="padding-top: 2rem;">
+      <div class="container">
+        <div class="flex flex-wrap gap-3 justify-center reveal" role="group" aria-label="Filtrer les projets">
+          <button 
+            @click="filter = 'all'" 
+            :class="filter === 'all' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="true">
+            Tous les projets
+          </button>
+          <button 
+            @click="filter = 'webapp'" 
+            :class="filter === 'webapp' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="false">
+            Web Apps
+          </button>
+          <button 
+            @click="filter = 'ecommerce'" 
+            :class="filter === 'ecommerce' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="false">
+            E-commerce
+          </button>
+          <button 
+            @click="filter = 'vitrine'" 
+            :class="filter === 'vitrine' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="false">
+            Sites vitrines
+          </button>
+          <button 
+            @click="filter = 'mobile'" 
+            :class="filter === 'mobile' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="false">
+            Mobile
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- PROJETS GRID -->
+    <section class="section" aria-label="Liste des projets">
+      <div class="container">
+        <div class="projects-grid">
+          
+          <!-- Projet 1: Web App -->
+          <article class="project-card reveal" x-show="filter === 'all' || filter === 'webapp'" x-transition>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Dashboard AgriTech CI" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">Web App</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">AgriTech CI</h3>
+              <p class="project-description">Plateforme de mise en relation entre agriculteurs et acheteurs en Côte d'Ivoire. Dashboard analytique, système de messagerie et gestion des commandes.</p>
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <ul class="text-sm text-muted space-y-1">
+                  <li>• 500+ agriculteurs inscrits</li>
+                  <li>• 2000+ transactions réalisées</li>
+                  <li>• Temps de chargement < 2s</li>
+                </ul>
+              </div>
+              <div class="project-meta">
+                <div class="project-stack">
+                  <span class="project-stack-item" title="React">R</span>
+                  <span class="project-stack-item" title="Node.js">N</span>
+                  <span class="project-stack-item" title="MongoDB">M</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Projet 2: E-commerce -->
+          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'ecommerce'" x-transition>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop" alt="Boutique Loko Fashion" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">E-commerce</span>
+                  <span class="tag">Next.js</span>
+                  <span class="tag">Stripe</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Loko Fashion</h3>
+              <p class="project-description">Boutique en ligne de mode africaine contemporaine. Paiement Mobile Money et Stripe, gestion des stocks en temps réel, wishlist et avis clients.</p>
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <ul class="text-sm text-muted space-y-1">
+                  <li>• Chiffre d'affaires : 15M FCFA/an</li>
+                  <li>• Taux de conversion : 4.2%</li>
+                  <li>• 1500+ clients actifs</li>
+                </ul>
+              </div>
+              <div class="project-meta">
+                <div class="project-stack">
+                  <span class="project-stack-item" title="Next.js">N</span>
+                  <span class="project-stack-item" title="Stripe">S</span>
+                  <span class="project-stack-item" title="PostgreSQL">Pg</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Projet 3: Site vitrine -->
+          <article class="project-card reveal stagger-2" x-show="filter === 'all' || filter === 'vitrine'" x-transition>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Site ImmoPlus CI" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">Site Vitrine</span>
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">Laravel</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">ImmoPlus CI</h3>
+              <p class="project-description">Site immobilier avec carte interactive, filtres avancés (prix, localisation, type), système de favoris et alertes email. Interface administrateur complète.</p>
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <ul class="text-sm text-muted space-y-1">
+                  <li>• 800+ biens listés</li>
+                  <li>• 50+ agences partenaires</li>
+                  <li>• SEO : 1ère page Google</li>
+                </ul>
+              </div>
+              <div class="project-meta">
+                <div class="project-stack">
+                  <span class="project-stack-item" title="Vue.js">V</span>
+                  <span class="project-stack-item" title="Laravel">L</span>
+                  <span class="project-stack-item" title="MySQL">My</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Projet 4: Mobile -->
+          <article class="project-card reveal" x-show="filter === 'all' || filter === 'mobile'" x-transition>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop" alt="Application Money Tracker CI" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">Mobile</span>
+                  <span class="tag">React Native</span>
+                  <span class="tag">Firebase</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Money Tracker CI</h3>
+              <p class="project-description">Application de suivi des dépenses Mobile Money. Sync automatique avec Orange Money et MTN, catégorisation intelligente, rapports mensuels détaillés.</p>
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <ul class="text-sm text-muted space-y-1">
+                  <li>• 5000+ téléchargements</li>
+                  <li>• Note moyenne : 4.6/5</li>
+                  <li>• 10000+ transactions suivies/mois</li>
+                </ul>
+              </div>
+              <div class="project-meta">
+                <div class="project-stack">
+                  <span class="project-stack-item" title="React Native">RN</span>
+                  <span class="project-stack-item" title="Firebase">F</span>
+                  <span class="project-stack-item" title="Node.js">N</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Projet 5: Web App -->
+          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'webapp'" x-transition>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop" alt="Plateforme EduLearn CI" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">Web App</span>
+                  <span class="tag">React</span>
+                  <span class="tag">Django</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">EduLearn CI</h3>
+              <p class="project-description">Plateforme d'e-learning pour les étudiants ivoiriens. Cours vidéo, quiz interactifs, suivi de progression et certificats de fin de formation.</p>
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <ul class="text-sm text-muted space-y-1">
+                  <li>• 2000+ étudiants inscrits</li>
+                  <li>• 150+ cours disponibles</li>
+                  <li>• Taux de complétion : 78%</li>
+                </ul>
+              </div>
+              <div class="project-meta">
+                <div class="project-stack">
+                  <span class="project-stack-item" title="React">R</span>
+                  <span class="project-stack-item" title="Django">D</span>
+                  <span class="project-stack-item" title="PostgreSQL">Pg</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Projet 6: Site vitrine -->
+          <article class="project-card reveal stagger-2" x-show="filter === 'all' || filter === 'vitrine'" x-transition>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=500&fit=crop" alt="Site Restaurant Maquis Chic" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">Site Vitrine</span>
+                  <span class="tag">HTML/CSS</span>
+                  <span class="tag">JavaScript</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Maquis Chic</h3>
+              <p class="project-description">Site vitrine pour un restaurant traditionnel ivoirien. Menu interactif, réservation en ligne, galerie photos et intégration Google Maps.</p>
+              <div class="mb-4">
+                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <ul class="text-sm text-muted space-y-1">
+                  <li>• Réservations +40%</li>
+                  <li>• Temps sur site : 3min+</li>
+                  <li>• 100% responsive</li>
+                </ul>
+              </div>
+              <div class="project-meta">
+                <div class="project-stack">
+                  <span class="project-stack-item" title="HTML">H</span>
+                  <span class="project-stack-item" title="CSS">C</span>
+                  <span class="project-stack-item" title="JavaScript">JS</span>
+                </div>
+                <div class="project-links">
+                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA SECTION -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="reveal">
+          <h2 id="cta-title" class="cta-title">Vous avez un projet similaire ?</h2>
+          <p class="cta-description">Discutons de vos besoins et voyons comment je peux vous accompagner.</p>
+          <div class="cta-buttons">
+            <a href="./contact.html" class="btn btn-primary">
+              <span>Me contacter</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="./services.html" class="btn btn-glass">
+              <span>Voir mes services</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="footer-logo">
+            <span>RD</span>
+            <span>Real Dosenaterro</span>
+          </a>
+          <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="./index.html">Accueil</a></li>
+            <li class="footer-link"><a href="./about.html">À propos</a></li>
+            <li class="footer-link"><a href="./projects.html">Projets</a></li>
+            <li class="footer-link"><a href="./services.html">Services</a></li>
+            <li class="footer-link"><a href="./blog.html">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="./services.html">Sites vitrines</a></li>
+            <li class="footer-link"><a href="./services.html">E-commerce</a></li>
+            <li class="footer-link"><a href="./services.html">Applications web</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="mailto:dosenaterroa@gmail.com">dosenaterroa@gmail.com</a></li>
+            <li class="footer-link"><a href="./contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 Real Dosenaterro. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="./legal/privacy.html">Politique de confidentialité</a>
+          <a href="./legal/terms.html">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JS Personnalisé -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

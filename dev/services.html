@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services de Real Dosenaterro - Sites vitrines, E-commerce, Applications web, SEO et optimisation. Solutions digitales sur mesure.">
+  <meta name="theme-color" content="#FCFCFF">
+  
+  <title>Services | Real Dosenaterro - Développeur Web</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-dark': '#052F5F',
+            'primary-teal': '#005377',
+            'accent-green': '#06A77D',
+            'bg-primary': '#FCFCFF',
+            'bg-secondary': '#F0F4F8',
+          },
+          fontFamily: {
+            'heading': ['Space Grotesk', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  
+  <!-- CSS Personnalisé -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 1800)">
+  
+  <!-- LOADER GLOBAL -->
+  <div class="page-loader" :class="{ 'hidden': loaded }">
+    <div class="loader-logo">
+      <span>R</span><span>D</span><span>.</span><span>D</span><span>EV</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+  
+  <!-- CURSEUR PERSONNALISÉ -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-container">
+      <a href="./index.html" class="navbar-logo" aria-label="Accueil">
+        <span class="navbar-logo-icon">RD</span>
+        <span>Real Dosenaterro</span>
+      </a>
+      
+      <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="navbar-menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="./index.html" class="navbar-link" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="./about.html" class="navbar-link" role="menuitem">À propos</a></li>
+        <li role="none"><a href="./projects.html" class="navbar-link" role="menuitem">Projets</a></li>
+        <li role="none"><a href="./services.html" class="navbar-link active" role="menuitem" aria-current="page">Services</a></li>
+        <li role="none"><a href="./blog.html" class="navbar-link" role="menuitem">Blog</a></li>
+        <li role="none"><a href="./contact.html" class="navbar-cta" role="menuitem">Me contacter</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 55vh;" aria-labelledby="services-title">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow" style="top: 10%; left: -10%;"></div>
+        <div class="hero-glow-2" style="bottom: 10%; right: -5%;"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="reveal">
+          <span class="section-label">Services</span>
+          <h1 id="services-title" class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">
+            Ce que je <span class="text-accent">propose</span>
+          </h1>
+          <p class="hero-description" style="max-width: 650px;">
+            Des services sur mesure pour donner vie à vos projets digitaux. De la conception au déploiement, je vous accompagne à chaque étape.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SERVICES GRID -->
+    <section class="section" aria-labelledby="services-list-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Offre</span>
+          <h2 id="services-list-title" class="section-title">Services professionnels</h2>
+          <p class="section-subtitle">Chaque projet est unique. J'adapte mon approche à vos besoins spécifiques pour un résultat optimal.</p>
+        </div>
+        
+        <div class="services-grid">
+          
+          <!-- Service 1: Sites vitrines -->
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">🌐</div>
+            <h3 class="service-title">Sites Vitrines</h3>
+            <p class="service-description">Présentez votre entreprise, vos services et vos réalisations avec un site web élégant et professionnel. Design moderne, responsive et optimisé pour le référencement.</p>
+            <ul class="service-features">
+              <li class="service-feature">Design unique et personnalisé</li>
+              <li class="service-feature">100% responsive (mobile, tablette, desktop)</li>
+              <li class="service-feature">Optimisation SEO de base</li>
+              <li class="service-feature">Formulaire de contact intégré</li>
+              <li class="service-feature">Intégration réseaux sociaux</li>
+            </ul>
+          </article>
+          
+          <!-- Service 2: E-commerce -->
+          <article class="service-card reveal stagger-1">
+            <div class="service-icon" aria-hidden="true">🛒</div>
+            <h3 class="service-title">E-commerce</h3>
+            <p class="service-description">Vendez vos produits en ligne avec une boutique performante. Intégration des paiements Mobile Money (Orange, MTN, Wave) et internationaux (Stripe, PayPal).</p>
+            <ul class="service-features">
+              <li class="service-feature">Catalogue produit avec filtres</li>
+              <li class="service-feature">Panier et checkout optimisés</li>
+              <li class="service-feature">Paiement Mobile Money & Stripe</li>
+              <li class="service-feature">Gestion des stocks</li>
+              <li class="service-feature">Tableau de bord administrateur</li>
+            </ul>
+          </article>
+          
+          <!-- Service 3: Applications web -->
+          <article class="service-card reveal stagger-2">
+            <div class="service-icon" aria-hidden="true">⚙️</div>
+            <h3 class="service-title">Applications Web</h3>
+            <p class="service-description">Développement d'applications web sur mesure : dashboards, plateformes de mise en relation, outils de gestion, et bien plus. Architecture scalable et sécurisée.</p>
+            <ul class="service-features">
+              <li class="service-feature">Développement frontend & backend</li>
+              <li class="service-feature">APIs RESTful sécurisées</li>
+              <li class="service-feature">Base de données optimisée</li>
+              <li class="service-feature">Authentification utilisateurs</li>
+              <li class="service-feature">Tests et documentation</li>
+            </ul>
+          </article>
+          
+          <!-- Service 4: Mobile Money -->
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">💳</div>
+            <h3 class="service-title">Intégration Mobile Money</h3>
+            <p class="service-description">Ajoutez les paiements Mobile Money à votre site ou application. Orange Money, MTN Mobile Money, Wave, Flooz — je gère l'intégration complète.</p>
+            <ul class="service-features">
+              <li class="service-feature">Intégration API Orange Money</li>
+              <li class="service-feature">Intégration MTN Mobile Money</li>
+              <li class="service-feature">Intégration Wave</li>
+              <li class="service-feature">Gestion des callbacks</li>
+              <li class="service-feature">Tableau de bord transactions</li>
+            </ul>
+          </article>
+          
+          <!-- Service 5: SEO & Performance -->
+          <article class="service-card reveal stagger-1">
+            <div class="service-icon" aria-hidden="true">📈</div>
+            <h3 class="service-title">SEO & Performance</h3>
+            <p class="service-description">Améliorez votre visibilité sur Google et la vitesse de votre site. Audit complet, recommandations et mise en œuvre des optimisations.</p>
+            <ul class="service-features">
+              <li class="service-feature">Audit SEO complet</li>
+              <li class="service-feature">Optimisation des performances</li>
+              <li class="service-feature">Optimisation images & assets</li>
+              <li class="service-feature">Mise en cache & CDN</li>
+              <li class="service-feature">Suivi Analytics & Search Console</li>
+            </ul>
+          </article>
+          
+          <!-- Service 6: Maintenance -->
+          <article class="service-card reveal stagger-2">
+            <div class="service-icon" aria-hidden="true">🔧</div>
+            <h3 class="service-title">Maintenance & Support</h3>
+            <p class="service-description">Gardez votre site sécurisé et à jour. Mises à jour régulières, sauvegardes, corrections de bugs et support technique réactif.</p>
+            <ul class="service-features">
+              <li class="service-feature">Mises à jour de sécurité</li>
+              <li class="service-feature">Sauvegardes automatiques</li>
+              <li class="service-feature">Correction de bugs</li>
+              <li class="service-feature">Support technique</li>
+              <li class="service-feature">Rapports mensuels</li>
+            </ul>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- PROCESS SECTION -->
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Méthodologie</span>
+          <h2 id="process-title" class="section-title">Comment je travaille</h2>
+          <p class="section-subtitle">Un processus clair et transparent pour garantir la qualité et la livraison dans les temps.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card text-center reveal stagger-1">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">1</div>
+            <h3 class="heading-4 mb-2">Discovery</h3>
+            <p class="text-small">Compréhension de vos besoins, objectifs et contraintes. Étude de la concurrence et définition du périmètre.</p>
+          </div>
+          
+          <div class="glass-card text-center reveal stagger-2">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">2</div>
+            <h3 class="heading-4 mb-2">Conception</h3>
+            <p class="text-small">Création des maquettes, choix technologiques et planification du développement avec jalons clairs.</p>
+          </div>
+          
+          <div class="glass-card text-center reveal stagger-3">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">3</div>
+            <h3 class="heading-4 mb-2">Développement</h3>
+            <p class="text-small">Codage itératif avec livraisons régulières. Tests continus et ajustements selon vos retours.</p>
+          </div>
+          
+          <div class="glass-card text-center reveal stagger-4">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">4</div>
+            <h3 class="heading-4 mb-2">Livraison</h3>
+            <p class="text-small">Déploiement en production, formation et documentation. Support post-lancement inclus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- TARIFS SECTION -->
+    <section class="section" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Tarifs</span>
+          <h2 id="pricing-title" class="section-title">Investissement</h2>
+          <p class="section-subtitle">Des tarifs transparents adaptés à différents budgets et besoins.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card reveal stagger-1">
+            <h3 class="heading-4 mb-2">Site Vitrine</h3>
+            <p class="text-3xl font-bold text-accent-green mb-4">À partir de 250K FCFA</p>
+            <p class="text-small mb-6">Idéal pour les PME, indépendants et entrepreneurs souhaitant une présence web professionnelle.</p>
+            <ul class="space-y-2 text-small mb-6">
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Design personnalisé</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> 3-5 pages</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Responsive</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> SEO de base</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Livraison 2-3 semaines</li>
+            </ul>
+          </div>
+          
+          <div class="glass-card glass-card-featured reveal stagger-2">
+            <div class="tag tag-green mb-4">Le plus populaire</div>
+            <h3 class="heading-4 mb-2">E-commerce</h3>
+            <p class="text-3xl font-bold text-accent-green mb-4">À partir de 600K FCFA</p>
+            <p class="text-small mb-6">Boutique en ligne complète avec paiements Mobile Money et gestion des stocks.</p>
+            <ul class="space-y-2 text-small mb-6">
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Design e-commerce</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Catalogue illimité</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Paiement Mobile Money</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Admin complet</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Livraison 4-6 semaines</li>
+            </ul>
+          </div>
+          
+          <div class="glass-card reveal stagger-3">
+            <h3 class="heading-4 mb-2">Application Web</h3>
+            <p class="text-3xl font-bold text-accent-green mb-4">Sur devis</p>
+            <p class="text-small mb-6">Applications sur mesure avec fonctionnalités avancées et architecture scalable.</p>
+            <ul class="space-y-2 text-small mb-6">
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Analyse des besoins</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Architecture sur mesure</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Frontend & Backend</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Tests & Documentation</li>
+              <li class="flex items-center gap-2"><span class="text-accent-green">✓</span> Support inclus</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA SECTION -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="reveal">
+          <h2 id="cta-title" class="cta-title">Prêt à démarrer ?</h2>
+          <p class="cta-description">Discutons de votre projet et trouvons la meilleure solution ensemble.</p>
+          <div class="cta-buttons">
+            <a href="./contact.html" class="btn btn-primary">
+              <span>Demander un devis</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="mailto:dosenaterroa@gmail.com" class="btn btn-glass">
+              <span>dosenaterroa@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="footer-logo">
+            <span>RD</span>
+            <span>Real Dosenaterro</span>
+          </a>
+          <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="./index.html">Accueil</a></li>
+            <li class="footer-link"><a href="./about.html">À propos</a></li>
+            <li class="footer-link"><a href="./projects.html">Projets</a></li>
+            <li class="footer-link"><a href="./services.html">Services</a></li>
+            <li class="footer-link"><a href="./blog.html">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="./services.html">Sites vitrines</a></li>
+            <li class="footer-link"><a href="./services.html">E-commerce</a></li>
+            <li class="footer-link"><a href="./services.html">Applications web</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="mailto:dosenaterroa@gmail.com">dosenaterroa@gmail.com</a></li>
+            <li class="footer-link"><a href="./contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 Real Dosenaterro. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="./legal/privacy.html">Politique de confidentialité</a>
+          <a href="./legal/terms.html">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JS Personnalisé -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

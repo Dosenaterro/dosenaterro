@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Real Dosenaterro - Développeur Web Full-Stack. Discutons de votre projet et trouvons la meilleure solution ensemble.">
+  <meta name="theme-color" content="#FCFCFF">
+  
+  <title>Contact | Real Dosenaterro - Développeur Web</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-dark': '#052F5F',
+            'primary-teal': '#005377',
+            'accent-green': '#06A77D',
+            'bg-primary': '#FCFCFF',
+            'bg-secondary': '#F0F4F8',
+          },
+          fontFamily: {
+            'heading': ['Space Grotesk', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  
+  <!-- CSS Personnalisé -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body x-data="{ loaded: false, formSubmitted: false, formError: false }" x-init="setTimeout(() => loaded = true, 1800)">
+  
+  <!-- LOADER GLOBAL -->
+  <div class="page-loader" :class="{ 'hidden': loaded }">
+    <div class="loader-logo">
+      <span>R</span><span>D</span><span>.</span><span>D</span><span>EV</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+  
+  <!-- CURSEUR PERSONNALISÉ -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-container">
+      <a href="./index.html" class="navbar-logo" aria-label="Accueil">
+        <span class="navbar-logo-icon">RD</span>
+        <span>Real Dosenaterro</span>
+      </a>
+      
+      <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="navbar-menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="./index.html" class="navbar-link" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="./about.html" class="navbar-link" role="menuitem">À propos</a></li>
+        <li role="none"><a href="./projects.html" class="navbar-link" role="menuitem">Projets</a></li>
+        <li role="none"><a href="./services.html" class="navbar-link" role="menuitem">Services</a></li>
+        <li role="none"><a href="./blog.html" class="navbar-link" role="menuitem">Blog</a></li>
+        <li role="none"><a href="./contact.html" class="navbar-cta" role="menuitem" aria-current="page">Me contacter</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 45vh;" aria-labelledby="contact-title">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow" style="top: 10%; left: -10%;"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="reveal">
+          <span class="section-label">Contact</span>
+          <h1 id="contact-title" class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">
+            Parlons de votre <span class="text-accent">projet</span>
+          </h1>
+          <p class="hero-description" style="max-width: 550px;">
+            Remplissez le formulaire ci-dessous ou contactez-moi directement. Je vous réponds sous 24h.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section class="section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Informations de contact -->
+          <div class="contact-info reveal">
+            <div>
+              <h2 class="heading-3 mb-6">Mes coordonnées</h2>
+              <p class="text-body mb-8">Prêt à donner vie à votre projet ? Je suis à votre écoute pour discuter de vos besoins et vous accompagner dans la réalisation de votre projet digital.</p>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">✉️</div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <a href="mailto:dosenaterroa@gmail.com">dosenaterroa@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📱</div>
+              <div class="contact-details">
+                <h4>Téléphone / WhatsApp</h4>
+                <a href="tel:+2250576057870">+225 05 76 05 78 70</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">📍</div>
+              <div class="contact-details">
+                <h4>Localisation</h4>
+                <p>Bingerville, Côte d'Ivoire — Disponible en remote</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">🕐</div>
+              <div class="contact-details">
+                <h4>Disponibilité</h4>
+                <p>Lun — Sam, 8h — 18h (GMT)</p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="heading-4 mb-4">Réseaux sociaux</h4>
+              <div class="contact-social">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="LinkedIn">
+                  <span aria-hidden="true">💼</span>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="GitHub">
+                  <span aria-hidden="true">⚡</span>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Twitter">
+                  <span aria-hidden="true">🐦</span>
+                </a>
+                <a href="https://wa.me/2250576057870" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="WhatsApp">
+                  <span aria-hidden="true">💬</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Formulaire -->
+          <div class="reveal-right">
+            <form 
+              class="contact-form"
+              hx-post="/contact"
+              hx-trigger="submit"
+              hx-swap="none"
+              data-validate
+              @htmx:after-request="
+                if ($event.detail.successful) {
+                  formSubmitted = true;
+                  formError = false;
+                  $event.target.reset();
+                } else {
+                  formError = true;
+                }
+              "
+              aria-labelledby="form-title">
+              
+              <h2 id="form-title" class="heading-3 mb-6">Envoyez-moi un message</h2>
+              
+              <!-- Feedback messages -->
+              <div 
+                x-show="formSubmitted" 
+                x-transition
+                class="form-feedback success"
+                role="alert"
+                style="display: none;">
+                ✅ Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+              </div>
+              
+              <div 
+                x-show="formError" 
+                x-transition
+                class="form-feedback error"
+                role="alert"
+                style="display: none;">
+                ❌ Une erreur est survenue. Veuillez réessayer ou me contacter directement par email/WhatsApp.
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">
+                    Nom <span class="text-accent-green" aria-label="obligatoire">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    class="form-input" 
+                    placeholder="Votre nom"
+                    required
+                    aria-required="true"
+                    autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    Email <span class="text-accent-green" aria-label="obligatoire">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    class="form-input" 
+                    placeholder="votre@email.com"
+                    required
+                    aria-required="true"
+                    autocomplete="email">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="project-type" class="form-label">
+                  Type de projet <span class="text-accent-green" aria-label="obligatoire">*</span>
+                </label>
+                <select 
+                  id="project-type"
+                  name="project_type"
+                  class="form-select"
+                  required
+                  aria-required="true">
+                  <option value="" disabled selected>Sélectionnez un type de projet</option>
+                  <option value="vitrine">Site vitrine</option>
+                  <option value="ecommerce">E-commerce</option>
+                  <option value="webapp">Application web</option>
+                  <option value="mobile">Application mobile</option>
+                  <option value="seo">SEO & Performance</option>
+                  <option value="maintenance">Maintenance</option>
+                  <option value="other">Autre</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="budget" class="form-label">Budget estimé</label>
+                <select 
+                  id="budget"
+                  name="budget"
+                  class="form-select">
+                  <option value="" disabled selected>Sélectionnez une fourchette</option>
+                  <option value="100k-250k">100K — 250K FCFA</option>
+                  <option value="250k-500k">250K — 500K FCFA</option>
+                  <option value="500k-1m">500K — 1M FCFA</option>
+                  <option value="1m+">Plus de 1M FCFA</option>
+                  <option value="unknown">À définir ensemble</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="form-label">
+                  Votre message <span class="text-accent-green" aria-label="obligatoire">*</span>
+                </label>
+                <textarea 
+                  id="message"
+                  name="message"
+                  class="form-textarea" 
+                  placeholder="Décrivez votre projet, vos objectifs et vos contraintes..."
+                  required
+                  aria-required="true"
+                  rows="5"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label class="flex items-start gap-3 cursor-pointer">
+                  <input 
+                    type="checkbox" 
+                    name="privacy"
+                    class="mt-1 w-4 h-4 accent-accent-green"
+                    required
+                    aria-required="true">
+                  <span class="text-sm text-muted">
+                    J'accepte que mes données soient traitées conformément à la 
+                    <a href="./legal/privacy.html" class="text-accent-green hover:underline">politique de confidentialité</a>.
+                  </span>
+                </label>
+              </div>
+              
+              <button type="submit" class="form-submit">
+                <span>Envoyer le message</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              
+              <p class="text-center text-sm text-muted mt-4">
+                Réponse garantie sous 24h
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ SECTION -->
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">FAQ</span>
+          <h2 id="faq-title" class="section-title">Questions fréquentes</h2>
+        </div>
+        
+        <div class="max-w-3xl mx-auto space-y-4" x-data="{ open: null }">
+          <div class="glass-card reveal">
+            <button 
+              @click="open === 1 ? open = null : open = 1"
+              class="w-full flex items-center justify-between text-left"
+              aria-expanded="false"
+              :aria-expanded="open === 1">
+              <h3 class="heading-4">Quel est votre délai de réponse ?</h3>
+              <span x-show="open !== 1" aria-hidden="true">+</span>
+              <span x-show="open === 1" aria-hidden="true">−</span>
+            </button>
+            <div x-show="open === 1" x-transition class="mt-4 text-body">
+              Je m'engage à répondre à toutes les demandes sous 24h. Pour les projets urgents, contactez-moi directement par WhatsApp au +225 05 76 05 78 70.
+            </div>
+          </div>
+          
+          <div class="glass-card reveal stagger-1">
+            <button 
+              @click="open === 2 ? open = null : open = 2"
+              class="w-full flex items-center justify-between text-left"
+              aria-expanded="false"
+              :aria-expanded="open === 2">
+              <h3 class="heading-4">Travaillez-vous à distance ?</h3>
+              <span x-show="open !== 2" aria-hidden="true">+</span>
+              <span x-show="open === 2" aria-hidden="true">−</span>
+            </button>
+            <div x-show="open === 2" x-transition class="mt-4 text-body">
+              Oui, je travaille principalement à distance avec des clients partout en Côte d'Ivoire et en Afrique. Les outils de collaboration (WhatsApp, Zoom, Notion) nous permettent de rester parfaitement synchronisés.
+            </div>
+          </div>
+          
+          <div class="glass-card reveal stagger-2">
+            <button 
+              @click="open === 3 ? open = null : open = 3"
+              class="w-full flex items-center justify-between text-left"
+              aria-expanded="false"
+              :aria-expanded="open === 3">
+              <h3 class="heading-4">Quelles sont vos modalités de paiement ?</h3>
+              <span x-show="open !== 3" aria-hidden="true">+</span>
+              <span x-show="open === 3" aria-hidden="true">−</span>
+            </button>
+            <div x-show="open === 3" x-transition class="mt-4 text-body">
+              Pour les sites vitrines : 50% à la commande, 50% à la livraison. Pour les projets plus complexes : 30% à la commande, 40% à mi-parcours, 30% à la livraison. Paiement par Mobile Money, virement ou espèces.
+            </div>
+          </div>
+          
+          <div class="glass-card reveal stagger-3">
+            <button 
+              @click="open === 4 ? open = null : open = 4"
+              class="w-full flex items-center justify-between text-left"
+              aria-expanded="false"
+              :aria-expanded="open === 4">
+              <h3 class="heading-4">Proposez-vous un support après livraison ?</h3>
+              <span x-show="open !== 4" aria-hidden="true">+</span>
+              <span x-show="open === 4" aria-hidden="true">−</span>
+            </button>
+            <div x-show="open === 4" x-transition class="mt-4 text-body">
+              Oui, je propose des forfaits de maintenance mensuels incluant les mises à jour de sécurité, les sauvegardes, les corrections de bugs et un support technique réactif.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA SECTION -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="reveal">
+          <h2 id="cta-title" class="cta-title">Prêt à démarrer ?</h2>
+          <p class="cta-description">N'attendez plus pour donner vie à votre projet. Je suis là pour vous accompagner.</p>
+          <div class="cta-buttons">
+            <a href="mailto:dosenaterroa@gmail.com" class="btn btn-primary">
+              <span>dosenaterroa@gmail.com</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="https://wa.me/2250576057870" class="btn btn-glass">
+              <span>WhatsApp : +225 05 76 05 78 70</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="footer-logo">
+            <span>RD</span>
+            <span>Real Dosenaterro</span>
+          </a>
+          <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="./index.html">Accueil</a></li>
+            <li class="footer-link"><a href="./about.html">À propos</a></li>
+            <li class="footer-link"><a href="./projects.html">Projets</a></li>
+            <li class="footer-link"><a href="./services.html">Services</a></li>
+            <li class="footer-link"><a href="./blog.html">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="./services.html">Sites vitrines</a></li>
+            <li class="footer-link"><a href="./services.html">E-commerce</a></li>
+            <li class="footer-link"><a href="./services.html">Applications web</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="mailto:dosenaterroa@gmail.com">dosenaterroa@gmail.com</a></li>
+            <li class="footer-link"><a href="tel:+2250576057870">+225 05 76 05 78 70</a></li>
+            <li class="footer-link"><a href="./contact.html">Formulaire de contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2024 Real Dosenaterro. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="./legal/privacy.html">Politique de confidentialité</a>
+          <a href="./legal/terms.html">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JS Personnalisé -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
