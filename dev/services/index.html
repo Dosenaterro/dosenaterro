@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Services de Real Dosenaterro - Sites vitrines, E-commerce, Applications web, SEO et optimisation. Solutions digitales sur mesure.">
+  <meta name="theme-color" content="#FCFCFF">
+  
+  <title>Services | Real Dosenaterro - Développeur Web</title>
+  
+  <!-- Open Graph Meta Tags for Social Media Sharing -->
+  <meta property="og:title" content="Services de Real Dosenaterro - Développeur Web Full-Stack">
+  <meta property="og:description" content="Découvrez les services proposés par Real Dosenaterro, un développeur web passionné basé en Côte d'Ivoire. Sites vitrines, e-commerce, applications web, SEO et optimisation pour votre présence en ligne.">
+  <meta property="og:image" content="assets/src/ServicesPreview.jpg">
+  <meta property="og:url" content="https://dosenaterro.vercel.app/services">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-dark': '#052F5F',
+            'primary-teal': '#005377',
+            'accent-green': '#06A77D',
+            'bg-primary': '#FCFCFF',
+            'bg-secondary': '#F0F4F8',
+          },
+          fontFamily: {
+            'heading': ['Space Grotesk', 'sans-serif'],
+            'body': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+  
+  <!-- CSS Personnalisé -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 1800)">
+  
+  <!-- LOADER GLOBAL -->
+  <div class="page-loader" :class="{ 'hidden': loaded }">
+    <div class="loader-logo">
+      <span>D.</span><span>D.</span><span>J.</span><span>A.</span><span>N</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+  </div>
+  
+  <!-- CURSEUR PERSONNALISÉ -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  
+  <!-- NAVIGATION -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-container">
+      <a href="../index.html" class="navbar-logo" aria-label="Accueil">
+        <span class="navbar-logo-icon">..I.I I.I..</span>
+        <span>Real Dosenaterro</span>
+      </a>
+      
+      <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="navbar-menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="../index.html" class="navbar-link" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="../about/" class="navbar-link" role="menuitem">À propos</a></li>
+        <li role="none"><a href="../projects/" class="navbar-link" role="menuitem">Projets</a></li>
+        <li role="none"><a href="../services/" class="navbar-link active" role="menuitem" aria-current="page">Services</a></li>
+        <li role="none"><a href="../blog/" class="navbar-link" role="menuitem">Blog</a></li>
+        <li role="none"><a href="../contact/" class="navbar-cta" role="menuitem">Me contacter</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" style="min-height: 55vh;" aria-labelledby="services-title">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow" style="top: 10%; left: -10%;"></div>
+        <div class="hero-glow-2" style="bottom: 10%; right: -5%;"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="reveal">
+          <span class="section-label">Services</span>
+          <h1 id="services-title" class="hero-title" style="font-size: clamp(2rem, 5vw, 4rem);">
+            Ce que je <span class="text-accent">propose</span>
+          </h1>
+          <p class="hero-description" style="max-width: 650px;">
+            Des services sur mesure pour donner vie à vos projets digitaux. De la conception au déploiement, je vous accompagne à chaque étape.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ==================== SERVICES ==================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title fade-in">Mes Services</h2>
+        <p class="section-subtitle fade-in">12 types de sites web professionnels pour répondre à tous vos besoins digitaux</p>
+
+        <!-- Présentation -->
+        <div class="category-group">
+          <h3 class="category-title fade-in">Présentation</h3>
+          <div class="services-grid">
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+                <h4>Site Vitrine</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Présente votre entreprise, services et produits sans fonctionnalité de vente en ligne</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Hôtel, restaurant, cabinet médical, agence immobilière, salon de coiffure</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Avoir une présence en ligne professionnelle et générer des contacts</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16a2 2 0 01-2 2Zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8"/><path d="M10 10h8"/></svg></div>
+                <h4>Site Portfolio</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Vitrine créative pour présenter vos réalisations et projets</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Designer, photographe, architecte, artiste, développeur</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Montrer votre travail et attirer des clients potentiels</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18Z"/><path d="M6 12H4a2 2 0 00-2 2v6a2 2 0 002 2h2"/><path d="M18 9h2a2 2 0 012 2v9a2 2 0 01-2 2h-2"/></svg></div>
+                <h4>Site Institutionnel</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Site corporate pour grandes organisations et institutions</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">ONG, ministères, universités, associations, fondations</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Communiquer officiellement et renforcer la crédibilité</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="category-group">
+          <h3 class="category-title fade-in">Contenu</h3>
+          <div class="services-grid">
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2Zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8"/><path d="M10 10h8"/></svg></div>
+                <h4>Site d'Actualités</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Plateforme de publication d'articles et d'informations</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Journal en ligne, magazine, média local, blog d'actualités</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Diffuser l'information et générer du trafic</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+                <h4>Blog</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Plateforme de partage d'articles, tutoriels et contenus réguliers</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Blog personnel, tech blog, lifestyle, cuisine, voyage</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Partager expertise et créer une communauté</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Transactionnel -->
+        <div class="category-group">
+          <h3 class="category-title fade-in">Transactionnel</h3>
+          <div class="services-grid">
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg></div>
+                <h4>Site E-commerce</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Boutique en ligne avec système de panier, paiement et gestion de stock</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Boutique de vêtements, électronique, cosmétiques, artisanat</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Vendre en ligne 24/7 et automatiser les commandes</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <h4>Marketplace</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Plateforme multi-vendeurs avec gestion des commissions</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Marketplace locale, plateforme de services, annuaires commerciaux</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Connecter vendeurs et acheteurs et générer des revenus</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                <h4>Site de Réservation</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Système de prise de rendez-vous et réservations en ligne</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Hôtel, restaurant, salles de fête, spa, médecins</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Automatiser les réservations et optimiser l'agenda</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Interactif -->
+        <div class="category-group">
+          <h3 class="category-title fade-in">Interactif</h3>
+          <div class="services-grid">
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+                <h4>Forum</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Plateforme communautaire d'échanges et discussions</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Communauté tech, forum d'entraide, groupe thématique</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Créer une communauté engagée et fidéliser</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                <h4>Web App</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Application web interactive avec fonctionnalités avancées</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">CRM, gestion de projet, tableau de bord, outil SaaS</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Automatiser des processus et améliorer la productivité</p></div>
+              </div>
+            </div>
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+                <h4>Réseau Social</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Plateforme sociale avec profils, posts, messages et interactions</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Réseau professionnel local, communauté niche, plateforme étudiante</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Connecter des personnes et créer de l'engagement</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Interne 
+        <div class="category-group">
+          <h3 class="category-title fade-in">Interne</h3>
+          <div class="services-grid">
+
+            <div class="card service-card fade-in">
+              <div class="service-card-header">
+                <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                <h4>Intranet</h4>
+              </div>
+              <div class="details">
+                <div><p class="detail-label">Définition :</p><p class="detail-text">Site privé pour communication et collaboration interne d'entreprise</p></div>
+                <div><p class="detail-label">Idées :</p><p class="detail-text">Portail employés, base de connaissance interne, gestion RH</p></div>
+                <div><p class="detail-label">Objectif :</p><p class="detail-text">Améliorer communication interne et centraliser l'information</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>-->
+
+      </div>
+    </section>
+
+    <!-- ==================== TARIFS ==================== -->
+    <section class="section section-alt" id="tarifs">
+      <div class="container">
+        <h2 class="section-title fade-in">Tarifs</h2>
+        <!--<p class="section-subtitle fade-in mb-10">Des prix adaptés au marché africain francophone 2025, pour un freelance – prix HT, hors hébergement/maintenance</p>-->
+
+        <!-- Sites de présentation et visibilité -->
+        <div class="pricing-group">
+          <h3 class="pricing-category-title fade-in">Sites de présentation et visibilité</h3>
+          <p class="pricing-category-desc fade-in">Focalisés sur la showcase d'informations, services ou travaux (Site vitrine, Portfolio, One-page, Landing, Institutionnel, Associatif)</p>
+          <div class="pricing-grid">
+            <div class="card pricing-card fade-in">
+              <h4>Basic</h4>
+              <p class="pricing-price">150k - 500k</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> 3-5 pages statiques</li>
+                <li><span class="check">&#10003;</span> Template basique adapté</li>
+                <li><span class="check">&#10003;</span> Texte/images simples</li>
+                <li><span class="check">&#10003;</span> Meta basiques</li>
+                <li><span class="check">&#10003;</span> Formulaire contact simple</li>
+                <li><span class="check">&#10003;</span> HTTPS de base</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card popular fade-in">
+              <span class="popular-badge">Plus Populaire</span>
+              <h4>Standard</h4>
+              <p class="pricing-price">500k - 1.5M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> 8-13 pages avec navigation avancée</li>
+                <li><span class="check">&#10003;</span> Design sur mesure, mobile-first</li>
+                <li><span class="check">&#10003;</span> Galerie, formulaires, maps</li>
+                <li><span class="check">&#10003;</span> Optimisation on-page, sitemap</li>
+                <li><span class="check">&#10003;</span> CMS pour mises à jour (WordPress)</li>
+                <li><span class="check">&#10003;</span> Antispam, backups basiques</li>
+              </ul>
+              <a href="../contact/" class="btn btn-accent btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card fade-in">
+              <h4>Professionnel</h4>
+              <p class="pricing-price">1.5M - 3M+</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Structure complexe (multi-sections, parallax)</li>
+                <li><span class="check">&#10003;</span> Premium UX/UI, animations CSS/JS</li>
+                <li><span class="check">&#10003;</span> Multimédia interactif (vidéos, sliders)</li>
+                <li><span class="check">&#10003;</span> SEO technique, intégration analytics</li>
+                <li><span class="check">&#10003;</span> Custom (API externes, dons pour associatifs)</li>
+                <li><span class="check">&#10003;</span> Firewall, GDPR, support 3 mois</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sites transactionnels -->
+        <div class="pricing-group">
+          <h3 class="pricing-category-title fade-in">Sites transactionnels</h3>
+          <p class="pricing-category-desc fade-in">Dédiés à la vente et aux paiements en ligne (E-commerce)</p>
+          <div class="pricing-grid">
+            <div class="card pricing-card fade-in">
+              <h4>Basic</h4>
+              <p class="pricing-price">800K - 2.5M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> 20-50 produits simples</li>
+                <li><span class="check">&#10003;</span> Template boutique basique</li>
+                <li><span class="check">&#10003;</span> Panier simple</li>
+                <li><span class="check">&#10003;</span> Mobile Money/Orange Money basique</li>
+                <li><span class="check">&#10003;</span> Meta produits</li>
+                <li><span class="check">&#10003;</span> HTTPS/PCI basique</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card popular fade-in">
+              <span class="popular-badge">Plus Populaire</span>
+              <h4>Standard</h4>
+              <p class="pricing-price">2.5M - 5M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> 100-200 produits avec variantes</li>
+                <li><span class="check">&#10003;</span> Design sur mesure, panier dynamique</li>
+                <li><span class="check">&#10003;</span> Multi-options (cartes, auto-livraison)</li>
+                <li><span class="check">&#10003;</span> Avis clients, promos</li>
+                <li><span class="check">&#10003;</span> Stock auto, newsletters</li>
+                <li><span class="check">&#10003;</span> Antifraude, backups</li>
+              </ul>
+              <a href="../contact/" class="btn btn-accent btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card fade-in">
+              <h4>Professionnel</h4>
+              <p class="pricing-price">5M - 10M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Produits illimités, import CSV/ERP</li>
+                <li><span class="check">&#10003;</span> UX e-commerce premium, mobile app-like</li>
+                <li><span class="check">&#10003;</span> Intégrations bancaires, règles complexes</li>
+                <li><span class="check">&#10003;</span> A/B testing, remarketing, SEO avancé</li>
+                <li><span class="check">&#10003;</span> Marketplace, abonnements, API fournisseurs</li>
+                <li><span class="check">&#10003;</span> Audit sécurité, support 6 mois</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sites de contenu dynamique -->
+        <div class="pricing-group">
+          <h3 class="pricing-category-title fade-in">Sites de contenu dynamique</h3>
+          <p class="pricing-category-desc fade-in">Orientés publication et mise à jour régulière de contenus (Blog, Site d'actualité ou média)</p>
+          <div class="pricing-grid">
+            <div class="card pricing-card fade-in">
+              <h4>Basic</h4>
+              <p class="pricing-price">300k - 800k</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Articles statiques</li>
+                <li><span class="check">&#10003;</span> Template blog basique</li>
+                <li><span class="check">&#10003;</span> Commentaires basiques</li>
+                <li><span class="check">&#10003;</span> Meta et balises</li>
+                <li><span class="check">&#10003;</span> Aucun ou basique intégrations</li>
+                <li><span class="check">&#10003;</span> Protection spam basique</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card popular fade-in">
+              <span class="popular-badge">Plus Populaire</span>
+              <h4>Standard</h4>
+              <p class="pricing-price">800k - 2M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> CMS simple (posts illimités)</li>
+                <li><span class="check">&#10003;</span> Thème personnalisé, infinite scroll</li>
+                <li><span class="check">&#10003;</span> Recherche, newsletters</li>
+                <li><span class="check">&#10003;</span> Optimisation articles, AMP</li>
+                <li><span class="check">&#10003;</span> RSS, partage social</li>
+                <li><span class="check">&#10003;</span> Backups automatisés</li>
+              </ul>
+              <a href="../contact/" class="btn btn-accent btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card fade-in">
+              <h4>Professionnel</h4>
+              <p class="pricing-price">2M - 4M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Éditeur avancé, catégories/tags multiples</li>
+                <li><span class="check">&#10003;</span> UX premium, dark mode, personnalisation user</li>
+                <li><span class="check">&#10003;</span> Modération, votes, intégration réseaux sociaux</li>
+                <li><span class="check">&#10003;</span> SEO avancé, schema markup, monétisation ads</li>
+                <li><span class="check">&#10003;</span> API news externes, podcasts/vidéos</li>
+                <li><span class="check">&#10003;</span> Sécurité renforcée, support 6 mois</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sites interactifs et communautaires -->
+        <div class="pricing-group">
+          <h3 class="pricing-category-title fade-in">Sites interactifs et communautaires</h3>
+          <p class="pricing-category-desc fade-in">Basés sur l'échange et l'interaction utilisateurs (Communautaire/Forum, Application web)</p>
+          <div class="pricing-grid">
+            <div class="card pricing-card fade-in">
+              <h4>Basic</h4>
+              <p class="pricing-price">2M - 4M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Inscription/forums basiques</li>
+                <li><span class="check">&#10003;</span> Interface simple</li>
+                <li><span class="check">&#10003;</span> BD simple (utilisateurs)</li>
+                <li><span class="check">&#10003;</span> Meta basiques</li>
+                <li><span class="check">&#10003;</span> API basiques</li>
+                <li><span class="check">&#10003;</span> Auth standard</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card popular fade-in">
+              <span class="popular-badge">Plus Populaire</span>
+              <h4>Standard</h4>
+              <p class="pricing-price">4M - 8M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Chat, posts, modération</li>
+                <li><span class="check">&#10003;</span> UX interactive, mobile-first</li>
+                <li><span class="check">&#10003;</span> Recherche avancée, profils</li>
+                <li><span class="check">&#10003;</span> Optimisation communautaire</li>
+                <li><span class="check">&#10003;</span> OAuth, paiements pour premium</li>
+                <li><span class="check">&#10003;</span> 2FA, GDPR</li>
+              </ul>
+              <a href="../contact/" class="btn btn-accent btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card fade-in">
+              <h4>Professionnel</h4>
+              <p class="pricing-price">8M - 15M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Real-time (WebSockets), notifications push</li>
+                <li><span class="check">&#10003;</span> Custom dashboard, thèmes personnalisables</li>
+                <li><span class="check">&#10003;</span> Scalable (cloud), analytics users</li>
+                <li><span class="check">&#10003;</span> SEO technique, intégration SEO tools</li>
+                <li><span class="check">&#10003;</span> Custom API, IA modération</li>
+                <li><span class="check">&#10003;</span> Audit complet, support 1 an</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sites internes et sécurisés 
+        <div class="pricing-group">
+          <h3 class="pricing-category-title fade-in">Sites internes et sécurisés</h3>
+          <p class="pricing-category-desc fade-in">Réservés à un usage privé ou professionnel interne (Intranet/Extranet)</p>
+          <div class="pricing-grid">
+            <div class="card pricing-card fade-in">
+              <h4>Basic</h4>
+              <p class="pricing-price">1.5M - 3M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Login basique</li>
+                <li><span class="check">&#10003;</span> Interface fonctionnelle</li>
+                <li><span class="check">&#10003;</span> Partage fichiers simples</li>
+                <li><span class="check">&#10003;</span> Non applicable (interne)</li>
+                <li><span class="check">&#10003;</span> Aucun ou basique intégrations</li>
+                <li><span class="check">&#10003;</span> VPN/HTTPS</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card popular fade-in">
+              <span class="popular-badge">Plus Populaire</span>
+              <h4>Standard</h4>
+              <p class="pricing-price">3M - 6M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> Rôles multiples (admins/users)</li>
+                <li><span class="check">&#10003;</span> Dashboard personnalisé</li>
+                <li><span class="check">&#10003;</span> Recherche, versioning</li>
+                <li><span class="check">&#10003;</span> Rapports internes</li>
+                <li><span class="check">&#10003;</span> API internes (CRM/ERP)</li>
+                <li><span class="check">&#10003;</span> Firewall, audits basiques</li>
+              </ul>
+              <a href="../contact/" class="btn btn-accent btn-full">Demander un Devis</a>
+            </div>
+            <div class="card pricing-card fade-in">
+              <h4>Professionnel</h4>
+              <p class="pricing-price">6M - 12M</p>
+              <p class="pricing-currency">FCFA</p>
+              <ul class="pricing-features">
+                <li><span class="check">&#10003;</span> SSO, multi-entreprises</li>
+                <li><span class="check">&#10003;</span> UX pro, mobile access sécurisé</li>
+                <li><span class="check">&#10003;</span> Automatisation workflows, intégration tools</li>
+                <li><span class="check">&#10003;</span> Analytics usage, export data</li>
+                <li><span class="check">&#10003;</span> Custom full-stack, cloud storage</li>
+                <li><span class="check">&#10003;</span> Encryption avancée, support dédié</li>
+              </ul>
+              <a href="../contact/" class="btn btn-primary btn-full">Demander un Devis</a>
+            </div>
+          </div>
+        </div>-->
+
+        <!-- Prestations Complémentaires -->
+        <h3 class="pricing-category-title fade-in" style="margin-top:3rem; display: inline-block;">Prestations Complémentaires</h3>
+        <div class="additional-grid">
+          <div class="card additional-card fade-in">
+            <h4>Maintenance & Support</h4>
+            <p class="price">100k - 300k/an</p>
+            <p>Mises à jour, backups, sécurité, support technique</p>
+          </div>
+          <div class="card additional-card fade-in">
+            <h4>Référencement SEO</h4>
+            <p class="price">500k - 2M</p>
+            <p>Optimisation complète, stratégie de contenu, backlinks</p>
+          </div>
+          <div class="card additional-card fade-in">
+            <h4>Refonte de Site</h4>
+            <p class="price">800k - 3M</p>
+            <p>Modernisation design, amélioration UX/UI, migration</p>
+          </div>
+          <div class="card additional-card fade-in">
+            <h4>Intégration Mobile Money</h4>
+            <p class="price">500k - 1.5M</p>
+            <p>Orange Money, MTN Mobile Money, Moov Money, Wave</p>
+          </div>
+          <div class="card additional-card fade-in">
+            <h4>Formation</h4>
+            <p class="price">200k - 600k</p>
+            <p>Formation à la gestion du site, création de contenu, SEO</p>
+          </div>
+          <div class="card additional-card fade-in">
+            <h4>Audit de Site</h4>
+            <p class="price">200k - 500k</p>
+            <p>Analyse complète : performance, SEO, sécurité, UX</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="section" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Méthodologie</span>
+          <h2 id="process-title" class="section-title">Comment je travaille</h2>
+          <p class="section-subtitle">Un processus clair et transparent pour garantir la qualité et la livraison dans les temps.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card text-center reveal stagger-1">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">1</div>
+            <h3 class="heading-4 mb-2">Discovery</h3>
+            <p class="text-small">Compréhension de vos besoins, objectifs et contraintes. Étude de la concurrence et définition du périmètre.</p>
+          </div>
+          
+          <div class="glass-card text-center reveal stagger-2">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">2</div>
+            <h3 class="heading-4 mb-2">Conception</h3>
+            <p class="text-small">Création des maquettes, choix technologiques et planification du développement avec jalons clairs.</p>
+          </div>
+          
+          <div class="glass-card text-center reveal stagger-3">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">3</div>
+            <h3 class="heading-4 mb-2">Développement</h3>
+            <p class="text-small">Codage itératif avec livraisons régulières. Tests continus et ajustements selon vos retours.</p>
+          </div>
+          
+          <div class="glass-card text-center reveal stagger-4">
+            <div class="w-16 h-16 mx-auto mb-4 bg-accent-green/20 rounded-full flex items-center justify-center text-2xl text-accent-green" aria-hidden="true">4</div>
+            <h3 class="heading-4 mb-2">Livraison</h3>
+            <p class="text-small">Déploiement en production, formation et documentation. Support post-lancement inclus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+    <!-- CTA SECTION -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-bg"></div>
+      <div class="container">
+        <div class="reveal">
+          <h2 id="cta-title" class="cta-title">Prêt à démarrer ?</h2>
+          <p class="cta-description">Discutons de votre projet et trouvons la meilleure solution ensemble.</p>
+          <div class="cta-buttons">
+            <a href="../contact/" class="btn btn-primary">
+              <span>Demander un devis</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="mailto:dosenaterroa@gmail.com" class="btn btn-glass">
+              <span>dosenaterroa@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">
+            <span>RD |</span>
+            <span>Real Dosenaterro</span>
+          </a><span>DOKA Degni JEAN Arnol NEHEMIE</span>
+          <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="../index.html">Accueil</a></li>
+            <li class="footer-link"><a href="../about/">À propos</a></li>
+            <li class="footer-link"><a href="../projects/">Projets</a></li>
+            <li class="footer-link"><a href="../services/">Services</a></li>
+            <li class="footer-link"><a href="../blog/">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="../services/">Présentation et Visibilité (Vitrine, Portfolio, Landing...)</a></li>
+            <li class="footer-link"><a href="../services/">Contenu dynamique (Blog, Sites d'actualités ou média)</a></li>
+            <li class="footer-link"><a href="../services/">Applications web</a></li>
+            <li class="footer-link"><a href="../services/">E-commerce</a></li>
+            <li class="footer-link"><a href="../services/">Interactifs et Communautaires (Communautaire/Forum)</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="mailto:dosenaterroa@gmail.com">dosenaterroa@gmail.com</a></li>
+            <li class="footer-link"><a href="../contact/">Formulaire de contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Real Dosenaterro. Tous droits réservés.</p>
+        <div class="footer-legal">
+          <a href="../legal/privacy/">Politique de confidentialité</a>
+          <a href="../legal/terms/">Conditions d'utilisation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JS Personnalisé -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+
+
