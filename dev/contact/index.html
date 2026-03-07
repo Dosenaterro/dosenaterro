@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez Real Dosenaterro - Développeur Web Full-Stack. Discutons de votre projet et trouvons la meilleure solution ensemble.">
+  <meta name="description"
+    content="Contactez Real Dosenaterro - Développeur Web Full-Stack. Discutons de votre projet et trouvons la meilleure solution ensemble.">
   <meta name="theme-color" content="#FCFCFF">
-  
+
   <title>Contact | Real Dosenaterro - Développeur Web</title>
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="Contactez Real Dosenaterro - Développeur Web Full-Stack">
-  <meta property="og:description" content="Contactez Real Dosenaterro pour discuter de votre projet web. Réponse garantie sous 24h.">
+  <meta property="og:description"
+    content="Contactez Real Dosenaterro pour discuter de votre projet web. Réponse garantie sous 24h.">
   <meta property="og:image" content="assets/src/ContactPreview.jpg">
   <meta property="og:url" content="https://dosenaterro.vercel.app/contact">
   <meta property="og:type" content="website">
-  
+
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/styles.css">
 
@@ -29,6 +32,7 @@
       gap: 0.75rem;
       cursor: pointer;
     }
+
     .form-checkbox-label input[type="checkbox"] {
       margin-top: 3px;
       width: 16px;
@@ -36,15 +40,18 @@
       accent-color: var(--accent-green);
       flex-shrink: 0;
     }
+
     .form-checkbox-label span {
       font-size: 0.875rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
+
     .form-checkbox-label a {
       color: var(--accent-green);
       text-decoration: none;
     }
+
     .form-checkbox-label a:hover {
       text-decoration: underline;
     }
@@ -52,7 +59,7 @@
 </head>
 
 <body x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 1800)">
-  
+
   <!-- LOADER -->
   <div class="page-loader" :class="{ 'hidden': loaded }">
     <div class="loader-logo">
@@ -62,34 +69,35 @@
       <div class="loader-progress"></div>
     </div>
   </div>
-  
+
   <!-- CURSEUR -->
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-dot" aria-hidden="true"></div>
-  
+
   <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="navbar-container">
-      <a href="../index.html" class="navbar-logo" aria-label="Accueil">
+      <a href="../" class="navbar-logo" aria-label="Accueil">
         <span class="navbar-logo-icon">..I.I I.I..</span>
         <span>Real Dosenaterro</span>
       </a>
-      
+
       <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
         <span></span><span></span><span></span>
       </button>
-      
+
       <ul class="navbar-menu" id="navbar-menu" role="menubar">
-        <li role="none"><a href="../index.html"    class="navbar-link" role="menuitem">Accueil</a></li>
-        <li role="none"><a href="../about/"    class="navbar-link" role="menuitem">À propos</a></li>
+        <li role="none"><a href="../" class="navbar-link" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="../about/" class="navbar-link" role="menuitem">À propos</a></li>
         <li role="none"><a href="../projects/" class="navbar-link" role="menuitem">Projets</a></li>
         <li role="none"><a href="../services/" class="navbar-link" role="menuitem">Services</a></li>
-        <li role="none"><a href="../blog/"     class="navbar-link" role="menuitem">Blog</a></li>
-        <li role="none"><a href="../contact/"  class="navbar-cta"  role="menuitem" aria-current="page">Me contacter</a></li>
+        <li role="none"><a href="../blog/" class="navbar-link" role="menuitem">Blog</a></li>
+        <li role="none"><a href="../contact/" class="navbar-cta" role="menuitem" aria-current="page">Me contacter</a>
+        </li>
       </ul>
     </div>
   </nav>
-  
+
   <main>
 
     <!-- HERO -->
@@ -120,9 +128,10 @@
           <div class="contact-info reveal">
             <div>
               <h2 class="heading-3" style="margin-bottom:1.5rem;">Mes coordonnées</h2>
-              <p class="text-body" style="margin-bottom:2rem;">Prêt à donner vie à votre projet ? Je suis à votre écoute pour discuter de vos besoins et vous accompagner dans la réalisation de votre projet digital.</p>
+              <p class="text-body" style="margin-bottom:2rem;">Prêt à donner vie à votre projet ? Je suis à votre écoute
+                pour discuter de vos besoins et vous accompagner dans la réalisation de votre projet digital.</p>
             </div>
-            
+
             <div class="contact-item">
               <div class="contact-icon"><i class="fi fi-br-at"></i></div>
               <div class="contact-details">
@@ -130,7 +139,7 @@
                 <a href="mailto:dosenaterroa@gmail.com">dosenaterroa@gmail.com</a>
               </div>
             </div>
-            
+
             <div class="contact-item">
               <div class="contact-icon"><i class="fi fi-br-phone-call"></i></div>
               <div class="contact-details">
@@ -138,7 +147,7 @@
                 <a href="tel:+2250576057870">+225 05 76 05 78 70</a>
               </div>
             </div>
-            
+
             <div class="contact-item">
               <div class="contact-icon"><i class="fi fi-br-marker"></i></div>
               <div class="contact-details">
@@ -146,7 +155,7 @@
                 <p>Bingerville, Côte d'Ivoire — Disponible en remote</p>
               </div>
             </div>
-            
+
             <div class="contact-item">
               <div class="contact-icon"><i class="fi fi-br-clock"></i></div>
               <div class="contact-details">
@@ -154,61 +163,57 @@
                 <p>Lun — Sam, 8h — 20h (GMT)</p>
               </div>
             </div>
-            
+
             <div>
               <h4 class="heading-4" style="margin-bottom:1rem;">Réseaux sociaux</h4>
               <div class="contact-social">
-                <a href="https://linkedin.com"             target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
-                <a href="https://github.com"               target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="GitHub"><i class="fi fi-brands-github"></i></a>
-                <a href="https://instagram.com"            target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
-                <a href="https://facebook.com"             target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="Facebook"><i class="fi fi-brands-facebook"></i></a>
-                <a href="https://wa.me/2250576057870"      target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
-                <a href="https://tiktok.com"               target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="TikTok"><i class="fi fi-brands-tiktok-circle"></i></a>
+                <a href="https://www.linkedin.com/in/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+
+                <a href="https://github.com/Dosenaterro" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="GitHub"><i class="fi fi-brands-github"></i></a>
+
+                <a href="https://www.instagram.com/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="https://www.facebook.com/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+
+                <a href="https://wa.me/2250576057870" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+
+                <a href="https://www.tiktok.com/@realdosenaterro" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
               </div>
             </div>
           </div>
 
           <!-- Formulaire -->
           <div class="reveal-right">
-            <form
-              class="contact-form"
-              id="contact-form"
-              novalidate
-              aria-labelledby="form-title">
+            <form class="contact-form" id="contact-form" novalidate aria-labelledby="form-title">
 
               <h2 id="form-title" class="heading-3" style="margin-bottom:1.5rem;">Envoyez-moi un message</h2>
 
               <!-- Nom + Email -->
               <div class="form-row">
                 <div class="form-group">
-                  <label for="name" class="form-label">Nom <span style="color:var(--accent-green)" aria-label="obligatoire">*</span></label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="form-input"
-                    placeholder="Votre nom"
-                    required
-                    aria-required="true"
-                    autocomplete="name">
+                  <label for="name" class="form-label">Nom <span style="color:var(--accent-green)"
+                      aria-label="obligatoire">*</span></label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="Votre nom" required
+                    aria-required="true" autocomplete="name">
                 </div>
                 <div class="form-group">
-                  <label for="email" class="form-label">Email <span style="color:var(--accent-green)" aria-label="obligatoire">*</span></label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-input"
-                    placeholder="votre@email.com"
-                    required
-                    aria-required="true"
-                    autocomplete="email">
+                  <label for="email" class="form-label">Email <span style="color:var(--accent-green)"
+                      aria-label="obligatoire">*</span></label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required
+                    aria-required="true" autocomplete="email">
                 </div>
               </div>
 
               <!-- Type de projet -->
               <div class="form-group">
-                <label for="project_type" class="form-label">Type de projet <span style="color:var(--accent-green)" aria-label="obligatoire">*</span></label>
+                <label for="project_type" class="form-label">Type de projet <span style="color:var(--accent-green)"
+                    aria-label="obligatoire">*</span></label>
                 <select id="project_type" name="project_type" class="form-select" required aria-required="true">
                   <option value="" disabled selected>Sélectionnez un type de projet</option>
                   <option value="vitrine">Site vitrine</option>
@@ -241,25 +246,17 @@
 
               <!-- Message -->
               <div class="form-group">
-                <label for="message" class="form-label">Votre message <span style="color:var(--accent-green)" aria-label="obligatoire">*</span></label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-textarea"
-                  placeholder="Décrivez votre projet, vos objectifs et vos contraintes..."
-                  required
-                  aria-required="true"
+                <label for="message" class="form-label">Votre message <span style="color:var(--accent-green)"
+                    aria-label="obligatoire">*</span></label>
+                <textarea id="message" name="message" class="form-textarea"
+                  placeholder="Décrivez votre projet, vos objectifs et vos contraintes..." required aria-required="true"
                   rows="5"></textarea>
               </div>
 
               <!-- Privacy -->
               <div class="form-group">
                 <label class="form-checkbox-label">
-                  <input
-                    type="checkbox"
-                    name="privacy"
-                    required
-                    aria-required="true">
+                  <input type="checkbox" name="privacy" required aria-required="true">
                   <span>
                     J'accepte que mes données soient traitées conformément à la
                     <a href="../legal/privacy/">politique de confidentialité</a>.
@@ -290,42 +287,50 @@
           <span class="section-label">FAQ</span>
           <h2 id="faq-title" class="section-title">Questions fréquentes</h2>
         </div>
-        
+
         <div style="max-width:48rem;margin:0 auto;" x-data="{ open: null }">
           <div class="glass-card reveal" style="margin-bottom:1rem;">
-            <div @click="open === 1 ? open = null : open = 1" class="w-full flex items-center justify-between text-left" :aria-expanded="open === 1">
+            <div @click="open === 1 ? open = null : open = 1" class="w-full flex items-center justify-between text-left"
+              :aria-expanded="open === 1">
               <h3 class="heading-4">Quel est votre délai de réponse ?</h3>
             </div>
             <div x-show="open === 1" x-transition class="text-body" style="margin-top:1rem;">
-              Je m'engage à répondre à toutes les demandes sous 24h. Pour les projets urgents, contactez-moi directement par WhatsApp au +225 05 76 05 78 70.
+              Je m'engage à répondre à toutes les demandes sous 24h. Pour les projets urgents, contactez-moi directement
+              par WhatsApp au +225 05 76 05 78 70.
             </div>
           </div>
 
           <div class="glass-card reveal stagger-1" style="margin-bottom:1rem;">
-            <div @click="open === 2 ? open = null : open = 2" class="w-full flex items-center justify-between text-left" :aria-expanded="open === 2">
+            <div @click="open === 2 ? open = null : open = 2" class="w-full flex items-center justify-between text-left"
+              :aria-expanded="open === 2">
               <h3 class="heading-4">Travaillez-vous à distance ?</h3>
             </div>
             <div x-show="open === 2" x-transition class="text-body" style="margin-top:1rem;">
-              Oui, je travaille principalement à distance avec des clients partout en Côte d'Ivoire et en Afrique. Les outils de collaboration (WhatsApp, Zoom, Notion) nous permettent de rester parfaitement synchronisés.
+              Oui, je travaille principalement à distance avec des clients partout en Côte d'Ivoire et en Afrique. Les
+              outils de collaboration (WhatsApp, Zoom, Notion) nous permettent de rester parfaitement synchronisés.
             </div>
           </div>
 
           <div class="glass-card reveal stagger-2" style="margin-bottom:1rem;">
-            <div @click="open === 3 ? open = null : open = 3" class="w-full flex items-center justify-between text-left" :aria-expanded="open === 3">
+            <div @click="open === 3 ? open = null : open = 3" class="w-full flex items-center justify-between text-left"
+              :aria-expanded="open === 3">
               <h3 class="heading-4">Quelles sont vos modalités de paiement ?</h3>
             </div>
             <div x-show="open === 3" x-transition class="text-body" style="margin-top:1rem;">
-              Pour les sites vitrines : 50% à la commande, 50% à la livraison. Pour les projets complexes : 30% à la commande, 40% à mi-parcours, 30% à la livraison. Paiement par Mobile Money, virement ou espèces.
+              Pour les sites vitrines : 50% à la commande, 50% à la livraison. Pour les projets complexes : 30% à la
+              commande, 40% à mi-parcours, 30% à la livraison. Paiement par Mobile Money, virement ou espèces.
             </div>
           </div>
 
           <div class="glass-card reveal stagger-3 w-full">
-            <div @click="open === 4 ? open = null : open = 4" class="w-full flex items-center justify-between text-left" :aria-expanded="open === 4">
+            <div @click="open === 4 ? open = null : open = 4" class="w-full flex items-center justify-between text-left"
+              :aria-expanded="open === 4">
               <h3 class="heading-4">Proposez-vous un support après livraison ?</h3>
               <!--<span aria-hidden="true" x-text="open === 4 ? '-' : '+'"></span>-->
             </div>
             <div x-show="open === 4" x-transition class="text-body" style="margin-top:1rem;">
-              Oui, je propose des forfaits de maintenance mensuels incluant les mises à jour de sécurité, les sauvegardes, les corrections de bugs et un support technique réactif.
+              Oui, je propose des forfaits de maintenance mensuels incluant les mises à jour de sécurité, les
+              sauvegardes, les corrections de bugs et un support technique réactif.
             </div>
           </div>
         </div>
@@ -338,7 +343,8 @@
       <div class="container">
         <div class="reveal">
           <h2 id="cta-title" class="cta-title">Prêt à démarrer ?</h2>
-          <p class="cta-description">N'attendez plus pour donner vie à votre projet. Je suis là pour vous accompagner.</p>
+          <p class="cta-description">N'attendez plus pour donner vie à votre projet. Je suis là pour vous accompagner.
+          </p>
           <div class="cta-buttons">
             <a href="mailto:dosenaterroa@gmail.com" class="btn btn-primary">
               <span>dosenaterroa@gmail.com</span>
@@ -359,17 +365,43 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="footer-logo">
-            <span>RD |</span>
-            <span>Real Dosenaterro</span>
-          </a>
-          <span style="font-size:0.875rem;color:var(--text-muted);">DOKA Degni JEAN Arnol NEHEMIE</span>
-          <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+          <div>
+            <a href="../" class="footer-logo">
+              <span>RD |</span>
+              <span>Real Dosenaterro</span>
+            </a><strong>DOKA Degni JEAN Arnol NEHEMIE</strong>
+            <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+
+          </div>
+
+          <div>
+            <div>
+              <div class="contact-social">
+                <a href="https://www.linkedin.com/in/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+
+                <a href="https://github.com/Dosenaterro" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="GitHub"><i class="fi fi-brands-github"></i></a>
+
+                <a href="https://www.instagram.com/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="https://www.facebook.com/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+
+                <a href="https://wa.me/2250576057870" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+
+                <a href="https://www.tiktok.com/@realdosenaterro" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
           <h4 class="footer-title">Navigation</h4>
           <ul class="footer-links">
-            <li class="footer-link"><a href="../index.html">Accueil</a></li>
+            <li class="footer-link"><a href="../">Accueil</a></li>
             <li class="footer-link"><a href="../about/">À propos</a></li>
             <li class="footer-link"><a href="../projects/">Projets</a></li>
             <li class="footer-link"><a href="../services/">Services</a></li>
@@ -407,4 +439,5 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
+
 </html>

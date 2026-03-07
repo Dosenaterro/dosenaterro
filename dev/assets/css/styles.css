@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
-@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
 
 /* --------------------------------------------
    VARIABLES CSS - PALETTE BLEU/VERT
@@ -872,6 +872,7 @@ img {
 @media (max-width: 768px) {
   .hero-overlay {
     flex-direction: column;
+    margin-left: -1.1rem;
   }
 
   .hero-pattern {
@@ -1644,7 +1645,11 @@ img {
   margin-top: 1rem;
 }
 
-.contact-social-link .fi {
+.contact-social a {
+  text-decoration: none;
+}
+
+.contact-social-link .fi, .contact-social .fa-brands {
   width: 44px;
   height: 44px;
   background: var(--glass-bg);
@@ -1658,7 +1663,7 @@ img {
   transition: var(--transition-base);
 }
 
-.contact-social-link .fi:hover {
+.contact-social-link .fi:hover, .contact-social .fa-brands:hover {
   background: var(--accent-green);
   border-color: var(--accent-green);
   color: white;

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio de projets de Real Dosenaterro - Applications web, sites vitrines, e-commerce et solutions digitales.">
+  <meta name="description"
+    content="Portfolio de projets de Real Dosenaterro - Applications web, sites vitrines, e-commerce et solutions digitales.">
   <meta name="theme-color" content="#FCFCFF">
-  
+
   <title>Projets</title>
 
   <!-- Open Graph Meta Tags for Social Media Sharing -->
   <meta property="og:title" content="Projets de Real Dosenaterro - Développeur Web Full-Stack">
-  <meta property="og:description" content="Découvrez une sélection de projets réalisés par Real Dosenaterro, un développeur web passionné basé en Côte d'Ivoire. Applications web, sites vitrines, e-commerce et solutions digitales.">
+  <meta property="og:description"
+    content="Découvrez une sélection de projets réalisés par Real Dosenaterro, un développeur web passionné basé en Côte d'Ivoire. Applications web, sites vitrines, e-commerce et solutions digitales.">
   <meta property="og:image" content="assets/src/ProjectsPreview.jpg">
   <meta property="og:url" content="https://dosenaterro.vercel.app/projects">
   <meta property="og:type" content="website">
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -36,18 +39,19 @@
       }
     }
   </script>
-  
+
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <!-- HTMX -->
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  
+
   <!-- CSS Personnalisé -->
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
 <body x-data="{ loaded: false, filter: 'all' }" x-init="setTimeout(() => loaded = true, 1800)">
-  
+
   <!-- LOADER GLOBAL -->
   <div class="page-loader" :class="{ 'hidden': loaded }">
     <div class="loader-logo">
@@ -57,36 +61,37 @@
       <div class="loader-progress"></div>
     </div>
   </div>
-  
+
   <!-- CURSEUR PERSONNALISÉ -->
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-dot" aria-hidden="true"></div>
-  
+
   <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="navbar-container">
-      <a href="../index.html" class="navbar-logo" aria-label="Accueil">
+      <a href="../" class="navbar-logo" aria-label="Accueil">
         <span class="navbar-logo-icon">..I.I I.I..</span>
         <span>Real Dosenaterro</span>
       </a>
-      
+
       <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      
+
       <ul class="navbar-menu" id="navbar-menu" role="menubar">
-        <li role="none"><a href="../index.html" class="navbar-link" role="menuitem">Accueil</a></li>
+        <li role="none"><a href="../" class="navbar-link" role="menuitem">Accueil</a></li>
         <li role="none"><a href="../about/" class="navbar-link" role="menuitem">À propos</a></li>
-        <li role="none"><a href="../projects/" class="navbar-link active" role="menuitem" aria-current="page">Projets</a></li>
+        <li role="none"><a href="../projects/" class="navbar-link active" role="menuitem"
+            aria-current="page">Projets</a></li>
         <li role="none"><a href="../services/" class="navbar-link" role="menuitem">Services</a></li>
         <li role="none"><a href="../blog/" class="navbar-link" role="menuitem">Blog</a></li>
         <li role="none"><a href="../contact/" class="navbar-cta" role="menuitem">Me contacter</a></li>
       </ul>
     </div>
   </nav>
-  
+
   <main>
     <!-- HERO SECTION -->
     <section class="hero" style="min-height: 50vh;" aria-labelledby="projects-title">
@@ -94,7 +99,7 @@
         <div class="hero-grid"></div>
         <div class="hero-glow" style="top: 5%; right: -5%;"></div>
       </div>
-      
+
       <div class="hero-content">
         <div class="reveal">
           <span class="section-label">Portfolio</span>
@@ -102,116 +107,119 @@
             Projets <span class="text-accent">sélectionnés</span>
           </h1>
           <p class="hero-description" style="max-width: 600px;">
-            Une sélection de réalisations qui illustrent mon expertise en développement web et ma capacité à m'adapter à différents besoins.
+            Une sélection de réalisations qui illustrent mon expertise en développement web et ma capacité à m'adapter à
+            différents besoins.
           </p>
         </div>
       </div>
     </section>
-    
+
     <!-- FILTRES -->
     <section class="section" style="padding-top: 2rem;">
       <div class="container">
         <div class="flex flex-wrap gap-3 justify-center reveal" role="group" aria-label="Filtrer les projets">
-          <button 
-            @click="filter = 'all'" 
+          <button @click="filter = 'all'"
             :class="filter === 'all' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
             class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
             aria-pressed="true">
             Tous les projets
           </button>
-          <button 
-            @click="filter = 'webapp'" 
+          <button @click="filter = 'webapp'"
             :class="filter === 'webapp' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
             class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
             aria-pressed="false">
             Web Apps
           </button>
-          <button 
-            @click="filter = 'ecommerce'" 
+          <button @click="filter = 'ecommerce'"
             :class="filter === 'ecommerce' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
             class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
             aria-pressed="false">
             E-commerce
           </button>
-          <button 
-            @click="filter = 'vitrine'" 
+          <button @click="filter = 'vitrine'"
             :class="filter === 'vitrine' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
             class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
             aria-pressed="false">
             Sites vitrines
           </button>
-          <button 
-            @click="filter = 'mobile'" 
+          <button @click="filter = 'mobile'"
             :class="filter === 'mobile' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
             class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
             aria-pressed="false">
             Mobile
           </button>
+          <button @click="filter = 'uiux'"
+            :class="filter === 'uiux' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="false">
+            UI/UX
+          </button>
         </div>
       </div>
     </section>
-    
+
     <!-- PROJETS GRID -->
     <section class="section" aria-label="Liste des projets">
       <div class="container">
         <div class="projects-grid">
-          
+
           <!-- Projet 1: Web App -->
-          <article class="project-card reveal" x-show="filter === 'all' || filter === 'webapp'" x-transition>
+          <article class="project-card reveal" x-show="filter === 'all' || filter === 'ecommerce'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Dashboard AgriTech CI" loading="lazy">
+              <img src="../assets/src/streamerdps.png" alt="Streamer DPS" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Web App</span>
-                  <span class="tag">React</span>
-                  <span class="tag">Node.js</span>
+                  <span class="tag">E-commerce</span>
                 </div>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">AgriTech CI</h3>
-              <p class="project-description">Plateforme de mise en relation entre agriculteurs et acheteurs en Côte d'Ivoire. Dashboard analytique, système de messagerie et gestion des commandes.</p>
+              <h3 class="project-title">Streamer DPS</h3>
+              <p class="project-description">Streamer DPS est une plateforme numérique qui simplifie la gestion et
+                l'accès à vos services en ligne. Elle centralise divertissement, musique, cloud et outils digitaux dans
+                un espace unique, fluide et sécurisé.</p>
               <div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
-                  <li>• 500+ agriculteurs inscrits</li>
+                  <li>• 1000+ souscripteurs</li>
                   <li>• 2000+ transactions réalisées</li>
-                  <li>• Temps de chargement < 2s</li>
+                  <li>• Temps de chargement &lt; 5s</li>
                 </ul>
               </div>
               <div class="project-meta">
                 <div class="project-stack">
-                  <span class="project-stack-item" title="React">R</span>
-                  <span class="project-stack-item" title="Node.js">N</span>
-                  <span class="project-stack-item" title="MongoDB">M</span>
+                  <span class="project-stack-item" title="PHP">PHP</span>
+                  <span class="project-stack-item" title="MySQL">MySQL</span>
+                  <span class="project-stack-item" title="JavaScript">JavaScript</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                  <a href="https://wa.me/2250708314338" class="project-link" aria-label="Voir le projet"
+                    title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
-                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
-                    <span aria-hidden="true">⚡</span>
+                  <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>-->
                   </a>
                 </div>
               </div>
             </div>
           </article>
-          
+
           <!-- Projet 2: E-commerce -->
-          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'ecommerce'" x-transition>
+          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'webapps'"
+            x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop" alt="Boutique Loko Fashion" loading="lazy">
+              <img src="../assets/src/mymdp.png" alt="MyMDP" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
-                  <span class="tag">E-commerce</span>
-                  <span class="tag">Next.js</span>
-                  <span class="tag">Stripe</span>
+                  <span class="tag">Web App</span>
                 </div>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Loko Fashion</h3>
-              <p class="project-description">Boutique en ligne de mode africaine contemporaine. Paiement Mobile Money et Stripe, gestion des stocks en temps réel, wishlist et avis clients.</p>
+              <h3 class="project-title">MyMDP</h3>
+              <p class="project-description">Générateur de mots de passe sécurisés et aléatoires.</p>
               <div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
@@ -222,37 +230,36 @@
               </div>
               <div class="project-meta">
                 <div class="project-stack">
-                  <span class="project-stack-item" title="Next.js">N</span>
-                  <span class="project-stack-item" title="Stripe">S</span>
-                  <span class="project-stack-item" title="PostgreSQL">Pg</span>
+                  <span class="project-stack-item" title="Flask">Flask</span>
+                  <span class="project-stack-item" title="PostgreSQL">PostgreSQL</span>
+                  <span class="project-stack-item" title="HTMLX">HTMLX</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
-                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
-                    <span aria-hidden="true">⚡</span>
+                  <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>-->
                   </a>
                 </div>
               </div>
             </div>
           </article>
-          
+
           <!-- Projet 3: Site vitrine -->
           <article class="project-card reveal stagger-2" x-show="filter === 'all' || filter === 'vitrine'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop" alt="Site ImmoPlus CI" loading="lazy">
+              <img src="../assets/src/goeat.png"
+                alt="GoEat" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Site Vitrine</span>
-                  <span class="tag">Vue.js</span>
-                  <span class="tag">Laravel</span>
                 </div>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">ImmoPlus CI</h3>
-              <p class="project-description">Site immobilier avec carte interactive, filtres avancés (prix, localisation, type), système de favoris et alertes email. Interface administrateur complète.</p>
+              <h3 class="project-title">GoEat</h3>
+              <p class="project-description">Site vitrine pour un restaurant de cuisine sénégalaise.</p>
               <div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
@@ -268,21 +275,22 @@
                   <span class="project-stack-item" title="MySQL">My</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
-                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
-                    <span aria-hidden="true">⚡</span>
+                  <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>-->
                   </a>
                 </div>
               </div>
             </div>
           </article>
-          
+
           <!-- Projet 4: Mobile -->
           <article class="project-card reveal" x-show="filter === 'all' || filter === 'mobile'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop" alt="Application Money Tracker CI" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop"
+                alt="Application Money Tracker CI" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Mobile</span>
@@ -293,7 +301,8 @@
             </div>
             <div class="project-content">
               <h3 class="project-title">Money Tracker CI</h3>
-              <p class="project-description">Application de suivi des dépenses Mobile Money. Sync automatique avec Orange Money et MTN, catégorisation intelligente, rapports mensuels détaillés.</p>
+              <p class="project-description">Application de suivi des dépenses Mobile Money. Sync automatique avec
+                Orange Money et MTN, catégorisation intelligente, rapports mensuels détaillés.</p>
               <div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
@@ -309,7 +318,7 @@
                   <span class="project-stack-item" title="Node.js">N</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
                   <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
@@ -319,11 +328,12 @@
               </div>
             </div>
           </article>
-          
+
           <!-- Projet 5: Web App -->
           <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'webapp'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop" alt="Plateforme EduLearn CI" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop"
+                alt="Plateforme EduLearn CI" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Web App</span>
@@ -334,7 +344,8 @@
             </div>
             <div class="project-content">
               <h3 class="project-title">EduLearn CI</h3>
-              <p class="project-description">Plateforme d'e-learning pour les étudiants ivoiriens. Cours vidéo, quiz interactifs, suivi de progression et certificats de fin de formation.</p>
+              <p class="project-description">Plateforme d'e-learning pour les étudiants ivoiriens. Cours vidéo, quiz
+                interactifs, suivi de progression et certificats de fin de formation.</p>
               <div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
@@ -350,7 +361,7 @@
                   <span class="project-stack-item" title="PostgreSQL">Pg</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
                   <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
@@ -360,11 +371,12 @@
               </div>
             </div>
           </article>
-          
+
           <!-- Projet 6: Site vitrine -->
           <article class="project-card reveal stagger-2" x-show="filter === 'all' || filter === 'vitrine'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=500&fit=crop" alt="Site Restaurant Maquis Chic" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=500&fit=crop"
+                alt="Site Restaurant Maquis Chic" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Site Vitrine</span>
@@ -375,7 +387,8 @@
             </div>
             <div class="project-content">
               <h3 class="project-title">Maquis Chic</h3>
-              <p class="project-description">Site vitrine pour un restaurant traditionnel ivoirien. Menu interactif, réservation en ligne, galerie photos et intégration Google Maps.</p>
+              <p class="project-description">Site vitrine pour un restaurant traditionnel ivoirien. Menu interactif,
+                réservation en ligne, galerie photos et intégration Google Maps.</p>
               <div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
@@ -391,7 +404,7 @@
                   <span class="project-stack-item" title="JavaScript">JS</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir la démo" title="Démo en ligne">
+                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
                   <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
@@ -401,11 +414,11 @@
               </div>
             </div>
           </article>
-          
+
         </div>
       </div>
     </section>
-    
+
     <!-- CTA SECTION -->
     <section class="cta-section" aria-labelledby="cta-title">
       <div class="cta-bg"></div>
@@ -426,30 +439,57 @@
       </div>
     </section>
   </main>
-  
+
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="../index.html" class="footer-logo">
-            <span>RD |</span>
-            <span>Real Dosenaterro</span>
-          </a><span>DOKA Degni JEAN Arnol NEHEMIE</span>
-          <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+          <div>
+            <a href="../" class="footer-logo">
+              <span>RD |</span>
+              <span>Real Dosenaterro</span>
+            </a><strong>DOKA Degni JEAN Arnol NEHEMIE</strong>
+            <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
+
+          </div>
+
+          <div>
+            <div>
+              <div class="contact-social">
+                <a href="https://www.linkedin.com/in/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
+
+                <a href="https://github.com/Dosenaterro" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="GitHub"><i class="fi fi-brands-github"></i></a>
+
+                <a href="https://www.instagram.com/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+
+                <a href="https://www.facebook.com/dokajeannehemie" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+
+                <a href="https://wa.me/2250576057870" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="WhatsApp"><i class="fi fi-brands-whatsapp"></i></a>
+
+                <a href="https://www.tiktok.com/@realdosenaterro" target="_blank" rel="noopener noreferrer"
+                  class="contact-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Navigation</h4>
           <ul class="footer-links">
-            <li class="footer-link"><a href="../index.html">Accueil</a></li>
+            <li class="footer-link"><a href="../">Accueil</a></li>
             <li class="footer-link"><a href="../about/">À propos</a></li>
             <li class="footer-link"><a href="../projects/">Projets</a></li>
             <li class="footer-link"><a href="../services/">Services</a></li>
             <li class="footer-link"><a href="../blog/">Blog</a></li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Services</h4>
           <ul class="footer-links">
@@ -458,7 +498,7 @@
             <li class="footer-link"><a href="../services/">Applications web</a></li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Contact</h4>
           <ul class="footer-links">
@@ -467,7 +507,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p class="footer-copyright">&copy; 2026 Real Dosenaterro. Tous droits réservés.</p>
         <div class="footer-legal">
@@ -477,9 +517,9 @@
       </div>
     </div>
   </footer>
-  
+
   <!-- JS Personnalisé -->
   <script src="../assets/js/main.js"></script>
 </body>
-</html>
 
+</html>
