@@ -9,6 +9,11 @@
   <meta name="theme-color" content="#FCFCFF">
 
   <title>Real Dosenaterro | DOKA Degni JEAN Arnol NEHEMIE</title>
+  <link rel="icon" href="assets/src/favicon.svg" type="image/x-icon">
+  <!-- SEO -->
+  <meta name="keywords"
+    content="Développeur web, Full-Stack, DOKA Degni JEAN Arnol NEHEMIE, Real Dosenaterro, applications web, sites vitrines, solutions digitales, développement frontend, développement backend, SEO, performance web">
+  <meta name="author" content="DOKA Degni JEAN Arnol NEHEMIE">
 
   <!-- Open Graph Meta Tags for Social Media Sharing -->
   <meta property="og:title" content="Real Dosenaterro | DOKA Degni JEAN Arnol NEHEMIE">
@@ -16,9 +21,12 @@
     content="Real Dosenaterro - Développeur Web Full-Stack. Création d'applications web modernes, sites vitrines et solutions digitales sur mesure.">
   <meta property="og:image" content="assets/src/dokajeannehemie.jpg">
   <meta property="og:url" content="https://dosenaterro.vercel.app">
-  <meta property="og:url" content="https://dosenaterro.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Real Dosenaterro">
+  <meta property="og:author" content="DOKA Degni JEAN Arnol NEHEMIE">
+  <meta property="keywords"
+    content="Développeur web, Full-Stack, DOKA Degni JEAN Arnol NEHEMIE, Real Dosenaterro, applications web, sites vitrines, solutions digitales, développement frontend, développement backend, SEO, performance web">
+
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
@@ -57,6 +65,8 @@
 
   <!-- CSS Personnalisé -->
   <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <script src="assets/js/script.js"></script>
 </head>
 
 <body x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 1800)">
@@ -79,7 +89,7 @@
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="navbar-container">
       <a href="./index.html" class="navbar-logo" aria-label="Accueil">
-        <span class="navbar-logo-icon">..I.I I.I..</span>
+        <img src="../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon">
         <span>Real Dosenaterro</span>
       </a>
 
@@ -478,7 +488,7 @@
         <div class="footer-brand">
           <div>
             <a href="./" class="footer-logo">
-              <span>RD |</span>
+              <span><img src="../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon"></span>
               <span>Real Dosenaterro</span>
             </a><strong>DOKA Degni JEAN Arnol NEHEMIE</strong>
             <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
@@ -524,10 +534,13 @@
         <div>
           <h4 class="footer-title">Services</h4>
           <ul class="footer-links">
-            <li class="footer-link"><a href="./services/">Sites vitrines</a></li>
-            <li class="footer-link"><a href="./services/">E-commerce</a></li>
+            <li class="footer-link"><a href="./services/">Présentation et Visibilité (Vitrine, Portfolio,
+                Landing...)</a></li>
+            <li class="footer-link"><a href="./services/">Contenu dynamique (Blog, Sites d'actualités ou média)</a>
+            </li>
             <li class="footer-link"><a href="./services/">Applications web</a></li>
-            <li class="footer-link"><a href="./services/">SEO & Performance</a></li>
+            <li class="footer-link"><a href="./services/">E-commerce</a></li>
+            <li class="footer-link"><a href="./services/">Interactifs et Communautaires (Communautaire/Forum)</a></li>
           </ul>
         </div>
 

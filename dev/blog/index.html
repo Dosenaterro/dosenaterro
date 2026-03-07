@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blog de Real Dosenaterro - Articles sur le développement web, les technologies et les bonnes pratiques.">
+  <meta name="description"
+    content="Blog de Real Dosenaterro - Articles sur le développement web, les technologies et les bonnes pratiques.">
   <meta name="theme-color" content="#FCFCFF">
-  
-  <title>Blog | Real Dosenaterro - Développeur Web</title>
-  
+
+  <title>Blog</title>
+  <link rel="icon" href="../assets/src/favicon.svg" type="image/x-icon">
+
   <!-- Google Fonts -->
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -31,18 +34,21 @@
       }
     }
   </script>
-  
+
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <!-- HTMX -->
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  
+
   <!-- CSS Personnalisé -->
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/script.js"></script>
+
 </head>
+
 <body x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 1800)">
-  
+
   <!-- LOADER GLOBAL -->
   <div class="page-loader" :class="{ 'hidden': loaded }">
     <div class="loader-logo">
@@ -52,25 +58,25 @@
       <div class="loader-progress"></div>
     </div>
   </div>
-  
+
   <!-- CURSEUR PERSONNALISÉ -->
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-dot" aria-hidden="true"></div>
-  
+
   <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="navbar-container">
       <a href="../" class="navbar-logo" aria-label="Accueil">
-        <span class="navbar-logo-icon">..I.I I.I..</span>
+        <img src="../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon">
         <span>Real Dosenaterro</span>
       </a>
-      
+
       <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      
+
       <ul class="navbar-menu" id="navbar-menu" role="menubar">
         <li role="none"><a href="../" class="navbar-link" role="menuitem">Accueil</a></li>
         <li role="none"><a href="../about/" class="navbar-link" role="menuitem">À propos</a></li>
@@ -81,7 +87,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <main>
     <!-- HERO SECTION -->
     <section class="hero" style="min-height: 50vh;" aria-labelledby="blog-title">
@@ -89,7 +95,7 @@
         <div class="hero-grid"></div>
         <div class="hero-glow" style="top: 5%; right: -10%;"></div>
       </div>
-      
+
       <div class="hero-content">
         <div class="reveal">
           <span class="section-label">Blog</span>
@@ -97,18 +103,19 @@
             Pensées & <span class="text-accent">partages</span>
           </h1>
           <p class="hero-description" style="max-width: 600px;">
-            Articles techniques et réflexions sur le développement web, les technologies et les bonnes pratiques du métier.
+            Articles techniques et réflexions sur le développement web, les technologies et les bonnes pratiques du
+            métier.
           </p>
         </div>
       </div>
     </section>
-    
+
     <!-- ARTICLES GRID -->
     <!--<section class="section" aria-label="Liste des articles">
       <div class="container">
         <div class="blog-grid">-->
-          
-          <!-- Article 1 
+
+    <!-- Article 1 
           <article class="blog-card reveal">
             <div class="blog-image">
               <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop" alt="Code sur écran" loading="lazy">
@@ -135,8 +142,8 @@
               </div>
             </div>
           </article>-->
-          
-          <!-- Article 2 
+
+    <!-- Article 2 
           <article class="blog-card reveal stagger-1">
             <div class="blog-image">
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop" alt="Analytics dashboard" loading="lazy">
@@ -163,8 +170,8 @@
               </div>
             </div>
           </article>-->
-          
-          <!-- Article 3 
+
+    <!-- Article 3 
           <article class="blog-card reveal stagger-2">
             <div class="blog-image">
               <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop" alt="E-commerce" loading="lazy">
@@ -191,8 +198,8 @@
               </div>
             </div>
           </article>-->
-          
-          <!-- Article 4 
+
+    <!-- Article 4 
           <article class="blog-card reveal">
             <div class="blog-image">
               <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop" alt="Responsive design" loading="lazy">
@@ -219,8 +226,8 @@
               </div>
             </div>
           </article>-->
-          
-          <!-- Article 5 
+
+    <!-- Article 5 
           <article class="blog-card reveal stagger-1">
             <div class="blog-image">
               <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=450&fit=crop" alt="React code" loading="lazy">
@@ -247,8 +254,8 @@
               </div>
             </div>
           </article>-->
-          
-          <!-- Article 6 
+
+    <!-- Article 6 
           <article class="blog-card reveal stagger-2">
             <div class="blog-image">
               <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=450&fit=crop" alt="Sécurité web" loading="lazy">
@@ -275,32 +282,29 @@
               </div>
             </div>
           </article>-->
-          
-        <!--</div>-->
-        
-        <!-- Pagination 
+
+    <!--</div>-->
+
+    <!-- Pagination 
         <nav class="mt-12 flex justify-center gap-2" aria-label="Pagination">
           <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-accent-green text-white font-medium" aria-current="page">1</a>
           <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-primary-teal hover:bg-gray-50 transition-colors">2</a>
           <a href="#" class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-primary-teal hover:bg-gray-50 transition-colors" aria-label="Page suivante">→</a>
         </nav>-->
-      <!--</div>
+    <!--</div>
     </section>-->
-    
+
     <!-- NEWSLETTER SECTION -->
     <section class="section" aria-labelledby="newsletter-title">
       <div class="container">
         <div class="glass-card max-w-2xl mx-auto text-center reveal">
           <h2 id="newsletter-title" class="heading-3 mb-4">Restez informé</h2>
-          <p class="text-body mb-6">Recevez mes derniers articles et ressources directement dans votre boîte mail. Pas de spam, promis.</p>
-          <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+          <p class="text-body mb-6">Recevez mes derniers articles et ressources directement dans votre boîte mail. Pas
+            de spam, promis.</p>
+          <form class="flex flex-col sm:flex-row gap-3"
+            onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
             <label for="newsletter-email" class="sr-only">Adresse email</label>
-            <input 
-              type="email" 
-              id="newsletter-email"
-              class="form-input flex-1" 
-              placeholder="votre@email.com" 
-              required
+            <input type="email" id="newsletter-email" class="form-input flex-1" placeholder="votre@email.com" required
               aria-required="true">
             <button type="submit" class="btn btn-primary whitespace-nowrap">
               <span>S'inscrire</span>
@@ -310,14 +314,15 @@
         </div>
       </div>
     </section>
-    
+
     <!-- CTA SECTION -->
     <section class="cta-section" aria-labelledby="cta-title">
       <div class="cta-bg"></div>
       <div class="container">
         <div class="reveal">
           <h2 id="cta-title" class="cta-title">Une question ?</h2>
-          <p class="cta-description">N'hésitez pas à me contacter pour discuter de vos projets ou simplement échanger.</p>
+          <p class="cta-description">N'hésitez pas à me contacter pour discuter de vos projets ou simplement échanger.
+          </p>
           <div class="cta-buttons">
             <a href="./contact/" class="btn btn-primary">
               <span>Me contacter</span>
@@ -331,7 +336,7 @@
       </div>
     </section>
   </main>
-  
+
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
@@ -339,8 +344,8 @@
         <div class="footer-brand">
           <div>
             <a href="../" class="footer-logo">
-              <span>RD |</span>
-              <span>Real Dosenaterro</span>
+              <span> <img src="../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon">
+              </span> <span>Real Dosenaterro</span>
             </a><strong>DOKA Degni JEAN Arnol NEHEMIE</strong>
             <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
 
@@ -370,7 +375,7 @@
             </div>
           </div>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Navigation</h4>
           <ul class="footer-links">
@@ -381,16 +386,20 @@
             <li class="footer-link"><a href="../blog/">Blog</a></li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Services</h4>
           <ul class="footer-links">
-            <li class="footer-link"><a href="../services/">Sites vitrines</a></li>
-            <li class="footer-link"><a href="../services/">E-commerce</a></li>
+            <li class="footer-link"><a href="../services/">Présentation et Visibilité (Vitrine, Portfolio,
+                Landing...)</a></li>
+            <li class="footer-link"><a href="../services/">Contenu dynamique (Blog, Sites d'actualités ou média)</a>
+            </li>
             <li class="footer-link"><a href="../services/">Applications web</a></li>
+            <li class="footer-link"><a href="../services/">E-commerce</a></li>
+            <li class="footer-link"><a href="../services/">Interactifs et Communautaires (Communautaire/Forum)</a></li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Contact</h4>
           <ul class="footer-links">
@@ -399,7 +408,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p class="footer-copyright">&copy; 2026 Real Dosenaterro. Tous droits réservés.</p>
         <div class="footer-legal">
@@ -409,9 +418,9 @@
       </div>
     </div>
   </footer>
-  
+
   <!-- JS Personnalisé -->
   <script src="../assets/js/main.js"></script>
 </body>
-</html>
 
+</html>

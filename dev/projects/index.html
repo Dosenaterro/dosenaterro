@@ -8,13 +8,14 @@
     content="Portfolio de projets de Real Dosenaterro - Applications web, sites vitrines, e-commerce et solutions digitales.">
   <meta name="theme-color" content="#FCFCFF">
 
-  <title>Projets</title>
+  <title>Mes Projets</title>
+  <link rel="icon" href="../assets/src/favicon.svg" type="image/x-icon">
 
   <!-- Open Graph Meta Tags for Social Media Sharing -->
   <meta property="og:title" content="Projets de Real Dosenaterro - Développeur Web Full-Stack">
   <meta property="og:description"
     content="Découvrez une sélection de projets réalisés par Real Dosenaterro, un développeur web passionné basé en Côte d'Ivoire. Applications web, sites vitrines, e-commerce et solutions digitales.">
-  <meta property="og:image" content="assets/src/ProjectsPreview.jpg">
+  <meta property="og:image" content="../assets/src/ProjectsPreview.jpg">
   <meta property="og:url" content="https://dosenaterro.vercel.app/projects">
   <meta property="og:type" content="website">
 
@@ -48,6 +49,10 @@
 
   <!-- CSS Personnalisé -->
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <style type="css/text">
+  </style>
+
+  <script src="../assets/js/script.js"></script>
 </head>
 
 <body x-data="{ loaded: false, filter: 'all' }" x-init="setTimeout(() => loaded = true, 1800)">
@@ -70,7 +75,7 @@
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="navbar-container">
       <a href="../" class="navbar-logo" aria-label="Accueil">
-        <span class="navbar-logo-icon">..I.I I.I..</span>
+        <img src="../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon">
         <span>Real Dosenaterro</span>
       </a>
 
@@ -154,6 +159,12 @@
             aria-pressed="false">
             UI/UX
           </button>
+          <button @click="filter = 'portfolio'"
+            :class="filter === 'portfolio' ? 'bg-accent-green text-white' : 'bg-white text-primary-teal border border-gray-200'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105 shadow-sm"
+            aria-pressed="false">
+            Portfolio
+          </button>
         </div>
       </div>
     </section>
@@ -163,7 +174,23 @@
       <div class="container">
         <div class="projects-grid">
 
-          <!-- Projet 1: Web App -->
+          <!-- Projet 0: Portfolio -->
+          <article class="project-card reveal" x-show="filter === 'all' || filter === 'portfolio'" x-transition>
+            <div class="project-image">
+              <img src="../assets/src/cv.jpeg" alt="Mon Portfolio" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-tags">
+                  <span class="tag">Portfolio</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title"><strong>DOKA</strong> Degni <strong>JEAN</strong> Arnol <strong>NEHEMIE</strong></h3>
+              <p class="project-description">Mon CV-Portfolio est une présentation interactive de mes compétences et de mes réalisations. Il met en valeur mon parcours professionnel et mes projets récents.</p>
+            </div>
+          </article>
+
+          <!-- Projet 1: E-commerce -->
           <article class="project-card reveal" x-show="filter === 'all' || filter === 'ecommerce'" x-transition>
             <div class="project-image">
               <img src="../assets/src/streamerdps.png" alt="Streamer DPS" loading="lazy">
@@ -194,7 +221,7 @@
                   <span class="project-stack-item" title="JavaScript">JavaScript</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://wa.me/2250708314338" class="project-link" aria-label="Voir le projet"
+                  <a href="https://wa.me/2250708314338?text=Bonjour%2C%20je%20souhaite%20faire%20un%20abonnement." class="project-link to-externe" aria-label="Voir le projet"
                     title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
@@ -206,9 +233,8 @@
             </div>
           </article>
 
-          <!-- Projet 2: E-commerce -->
-          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'webapps'"
-            x-transition>
+          <!-- Projet 2: Web App -->
+          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'webapps'" x-transition>
             <div class="project-image">
               <img src="../assets/src/mymdp.png" alt="MyMDP" loading="lazy">
               <div class="project-overlay">
@@ -235,7 +261,7 @@
                   <span class="project-stack-item" title="HTMLX">HTMLX</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
+                  <a href="#" class="project-link to-externe" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
                   <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
@@ -249,8 +275,7 @@
           <!-- Projet 3: Site vitrine -->
           <article class="project-card reveal stagger-2" x-show="filter === 'all' || filter === 'vitrine'" x-transition>
             <div class="project-image">
-              <img src="../assets/src/goeat.png"
-                alt="GoEat" loading="lazy">
+              <img src="../assets/src/goeat.png" alt="GoEat" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Site Vitrine</span>
@@ -259,23 +284,24 @@
             </div>
             <div class="project-content">
               <h3 class="project-title">GoEat</h3>
-              <p class="project-description">Site vitrine pour un restaurant de cuisine sénégalaise.</p>
-              <div class="mb-4">
+              <p class="project-description">Site vitrine pour un restaurant traditionnel ivoirien. Menu interactif,
+                réservation en ligne, galerie photos et intégration Google Maps.</p>
+              <!--<div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
                   <li>• 800+ biens listés</li>
                   <li>• 50+ agences partenaires</li>
                   <li>• SEO : 1ère page Google</li>
                 </ul>
-              </div>
+              </div>-->
               <div class="project-meta">
                 <div class="project-stack">
-                  <span class="project-stack-item" title="Vue.js">V</span>
-                  <span class="project-stack-item" title="Laravel">L</span>
-                  <span class="project-stack-item" title="MySQL">My</span>
+                  <span class="project-stack-item" title="Alphine.js">Alpine.js</span>
+                  <span class="project-stack-item" title="Javascript">JavaScript</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
+                  <a href="https://dosenaterro.github.io/dev/restaurants/GoEat/" class="project-link to-externe"
+                    aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
                   <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
@@ -286,87 +312,79 @@
             </div>
           </article>
 
-          <!-- Projet 4: Mobile -->
-          <article class="project-card reveal" x-show="filter === 'all' || filter === 'mobile'" x-transition>
+          <!-- Projet 4: UI/UX -->
+          <article class="project-card reveal" x-show="filter === 'all' || filter === 'uiux'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=500&fit=crop"
-                alt="Application Money Tracker CI" loading="lazy">
+              <img src="../assets/src/djamo.png" alt="Djamo" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Mobile</span>
-                  <span class="tag">React Native</span>
-                  <span class="tag">Firebase</span>
+                  <span class="tag">UI/UX</span>
                 </div>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Money Tracker CI</h3>
+              <h3 class="project-title">Djamo</h3>
               <p class="project-description">Application de suivi des dépenses Mobile Money. Sync automatique avec
                 Orange Money et MTN, catégorisation intelligente, rapports mensuels détaillés.</p>
-              <div class="mb-4">
+              <!--<div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
                   <li>• 5000+ téléchargements</li>
                   <li>• Note moyenne : 4.6/5</li>
                   <li>• 10000+ transactions suivies/mois</li>
                 </ul>
-              </div>
+              </div>-->
               <div class="project-meta">
                 <div class="project-stack">
-                  <span class="project-stack-item" title="React Native">RN</span>
-                  <span class="project-stack-item" title="Firebase">F</span>
-                  <span class="project-stack-item" title="Node.js">N</span>
+                  <span class="project-stack-item" title="Figma">Figma</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
+                  <a href="https://tinyurl.com/yc5x3e9f" class="project-link to-externe" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
-                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
-                    <span aria-hidden="true">⚡</span>
+                  <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>-->
                   </a>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- Projet 5: Web App -->
-          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'webapp'" x-transition>
+          <!-- Projet 5: UI/UX -->
+          <article class="project-card reveal stagger-1" x-show="filter === 'all' || filter === 'uiux'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop"
-                alt="Plateforme EduLearn CI" loading="lazy">
+              <img src="../assets/src/om.png" alt="Orange Money Marchand" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
-                  <span class="tag">Web App</span>
-                  <span class="tag">React</span>
-                  <span class="tag">Django</span>
+                  <span class="tag">UI/UX</span>
+                  <span class="tag">Mobile</span>
                 </div>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">EduLearn CI</h3>
-              <p class="project-description">Plateforme d'e-learning pour les étudiants ivoiriens. Cours vidéo, quiz
-                interactifs, suivi de progression et certificats de fin de formation.</p>
-              <div class="mb-4">
+              <h3 class="project-title">Orange Money Marchand</h3>
+              <p class="project-description">Orange Money est un service de paiement mobile qui permet aux utilisateurs
+                de la Côte d'Ivoire de réaliser des transactions financières facilement.</p>
+              <!--<div class="mb-4">
                 <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
                   <li>• 2000+ étudiants inscrits</li>
                   <li>• 150+ cours disponibles</li>
                   <li>• Taux de complétion : 78%</li>
                 </ul>
-              </div>
+              </div>-->
               <div class="project-meta">
                 <div class="project-stack">
-                  <span class="project-stack-item" title="React">R</span>
-                  <span class="project-stack-item" title="Django">D</span>
-                  <span class="project-stack-item" title="PostgreSQL">Pg</span>
+                  <span class="project-stack-item" title="Figma">Figma</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
+                  <a href="https://tinyurl.com/35m6n7us" class="project-link to-externe" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
-                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                  <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
                     <span aria-hidden="true">⚡</span>
-                  </a>
+                  </a>-->
                 </div>
               </div>
             </div>
@@ -375,40 +393,36 @@
           <!-- Projet 6: Site vitrine -->
           <article class="project-card reveal stagger-2" x-show="filter === 'all' || filter === 'vitrine'" x-transition>
             <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=500&fit=crop"
+              <img src="../assets/src/gosleep.jpeg"
                 alt="Site Restaurant Maquis Chic" loading="lazy">
               <div class="project-overlay">
                 <div class="project-tags">
                   <span class="tag">Site Vitrine</span>
-                  <span class="tag">HTML/CSS</span>
-                  <span class="tag">JavaScript</span>
                 </div>
               </div>
             </div>
             <div class="project-content">
-              <h3 class="project-title">Maquis Chic</h3>
-              <p class="project-description">Site vitrine pour un restaurant traditionnel ivoirien. Menu interactif,
-                réservation en ligne, galerie photos et intégration Google Maps.</p>
+              <h3 class="project-title">GoSleep</h3>
+              <p class="project-description">Site vitrine pour un hôtel de luxe à Abidjan. Réservation en ligne, galerie photos et intégration Google Maps.</p>
               <div class="mb-4">
-                <h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
+                <!--<h4 class="text-sm font-semibold text-primary-teal mb-2">Résultats :</h4>
                 <ul class="text-sm text-muted space-y-1">
                   <li>• Réservations +40%</li>
                   <li>• Temps sur site : 3min+</li>
                   <li>• 100% responsive</li>
                 </ul>
-              </div>
+              </div>-->
               <div class="project-meta">
                 <div class="project-stack">
-                  <span class="project-stack-item" title="HTML">H</span>
-                  <span class="project-stack-item" title="CSS">C</span>
-                  <span class="project-stack-item" title="JavaScript">JS</span>
+                  <span class="project-stack-item" title="HTMLX">HTMLX</span>
+                  <span class="project-stack-item" title="Javascript">Javascript</span>
                 </div>
                 <div class="project-links">
-                  <a href="#" class="project-link" aria-label="Voir le projet" title="Voir le projet">
+                  <a href="https://dosenaterro.github.io/dev/residence/GoSleep/" class="project-link to-externe" aria-label="Voir le projet" title="Voir le projet">
                     <span aria-hidden="true">↗</span>
                   </a>
-                  <a href="#" class="project-link" aria-label="Voir le code" title="Code source">
-                    <span aria-hidden="true">⚡</span>
+                  <!--<a href="#" class="project-link" aria-label="Voir le code" title="Code source">
+                    <span aria-hidden="true">⚡</span>-->
                   </a>
                 </div>
               </div>
@@ -447,8 +461,8 @@
         <div class="footer-brand">
           <div>
             <a href="../" class="footer-logo">
-              <span>RD |</span>
-              <span>Real Dosenaterro</span>
+<span>        <img src="../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon">
+</span>              <span>Real Dosenaterro</span>
             </a><strong>DOKA Degni JEAN Arnol NEHEMIE</strong>
             <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
 
@@ -493,9 +507,13 @@
         <div>
           <h4 class="footer-title">Services</h4>
           <ul class="footer-links">
-            <li class="footer-link"><a href="../services/">Sites vitrines</a></li>
-            <li class="footer-link"><a href="../services/">E-commerce</a></li>
+            <li class="footer-link"><a href="../services/">Présentation et Visibilité (Vitrine, Portfolio,
+                Landing...)</a></li>
+            <li class="footer-link"><a href="../services/">Contenu dynamique (Blog, Sites d'actualités ou média)</a>
+            </li>
             <li class="footer-link"><a href="../services/">Applications web</a></li>
+            <li class="footer-link"><a href="../services/">E-commerce</a></li>
+            <li class="footer-link"><a href="../services/">Interactifs et Communautaires (Communautaire/Forum)</a></li>
           </ul>
         </div>
 

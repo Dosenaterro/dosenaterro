@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conditions d'utilisation - Real Dosenaterro. Consultez les termes et conditions régissant l'utilisation de ce site web.">
+  <meta name="description"
+    content="Conditions d'utilisation - Real Dosenaterro. Consultez les termes et conditions régissant l'utilisation de ce site web.">
   <meta name="theme-color" content="#FCFCFF">
-  
-  <title>Conditions d'utilisation | Real Dosenaterro</title>
-  
+
+  <title>Conditions d'utilisation</title>
+  <link rel="icon" href="../../assets/src/favicon.svg" type="image/x-icon">
+
   <!-- Google Fonts -->
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -31,18 +34,21 @@
       }
     }
   </script>
-  
+
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
   <!-- HTMX -->
   <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-  
+
   <!-- CSS Personnalisé -->
   <link rel="stylesheet" href="../../assets/css/styles.css">
+  <script src="../../assets/js/script.js"></script>
+
 </head>
+
 <body x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 1800)">
-  
+
   <!-- LOADER GLOBAL -->
   <div class="page-loader" :class="{ 'hidden': loaded }">
     <div class="loader-logo">
@@ -52,25 +58,25 @@
       <div class="loader-progress"></div>
     </div>
   </div>
-  
+
   <!-- CURSEUR PERSONNALISÉ -->
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-dot" aria-hidden="true"></div>
-  
+
   <!-- NAVIGATION -->
   <nav class="navbar" role="navigation" aria-label="Navigation principale">
     <div class="navbar-container">
       <a href="../../" class="navbar-logo" aria-label="Accueil">
-        <span class="navbar-logo-icon">..I.I I.I..</span>
+        <img src="../../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon">
         <span>Real Dosenaterro</span>
       </a>
-      
+
       <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navbar-menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      
+
       <ul class="navbar-menu" id="navbar-menu" role="menubar">
         <li role="none"><a href="../../" class="navbar-link" role="menuitem">Accueil</a></li>
         <li role="none"><a href="../../about/" class="navbar-link" role="menuitem">À propos</a></li>
@@ -81,7 +87,7 @@
       </ul>
     </div>
   </nav>
-  
+
   <main>
     <!-- HERO SECTION -->
     <section class="hero" style="min-height: 40vh;" aria-labelledby="terms-title">
@@ -89,7 +95,7 @@
         <div class="hero-grid"></div>
         <div class="hero-glow" style="top: 5%; right: -10%;"></div>
       </div>
-      
+
       <div class="hero-content">
         <div class="reveal">
           <span class="section-label">Légal</span>
@@ -99,24 +105,28 @@
         </div>
       </div>
     </section>
-    
+
     <!-- CONTENT SECTION -->
     <section class="section" aria-label="Contenu légal">
       <div class="container">
         <div class="legal-content">
           <p class="legal-date reveal">Dernière mise à jour : 03 Mars 2026</p>
-          
+
           <div class="legal-section reveal">
             <h2>1. Acceptation des conditions</h2>
-            <p>En accédant et en utilisant le site web de Real Dosenaterro (« le Site »), vous acceptez d'être lié par les présentes conditions d'utilisation (« Conditions »). Si vous n'acceptez pas ces Conditions, veuillez ne pas utiliser le Site.</p>
+            <p>En accédant et en utilisant le site web de Real Dosenaterro (« le Site »), vous acceptez d'être lié par
+              les présentes conditions d'utilisation (« Conditions »). Si vous n'acceptez pas ces Conditions, veuillez
+              ne pas utiliser le Site.</p>
           </div>
-          
+
           <div class="legal-section reveal stagger-1">
             <h2>2. Propriété intellectuelle</h2>
-            <p>L'ensemble du contenu présent sur le Site, incluant les textes, images, graphiques et code source, est la propriété exclusive de Real Dosenaterro et est protégé par les lois sur la propriété intellectuelle.</p>
-            <p>Toute reproduction, distribution ou utilisation du contenu sans autorisation écrite préalable est strictement interdite.</p>
+            <p>L'ensemble du contenu présent sur le Site, incluant les textes, images, graphiques et code source, est la
+              propriété exclusive de Real Dosenaterro et est protégé par les lois sur la propriété intellectuelle.</p>
+            <p>Toute reproduction, distribution ou utilisation du contenu sans autorisation écrite préalable est
+              strictement interdite.</p>
           </div>
-          
+
           <div class="legal-section reveal stagger-2">
             <h2>3. Utilisation du site</h2>
             <p>Vous vous engagez à :</p>
@@ -127,28 +137,33 @@
               <li>Respecter tous les lois et réglementations applicables</li>
             </ul>
           </div>
-          
+
           <div class="legal-section reveal">
             <h2>4. Limitation de responsabilité</h2>
-            <p>Real Dosenaterro ne sera pas responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser le Site.</p>
+            <p>Real Dosenaterro ne sera pas responsable des dommages directs ou indirects résultant de l'utilisation ou
+              de l'impossibilité d'utiliser le Site.</p>
             <p>Le Site est fourni « tel quel » sans garantie d'aucune sorte.</p>
           </div>
-          
+
           <div class="legal-section reveal stagger-1">
             <h2>5. Liens externes</h2>
-            <p>Le Site peut contenir des liens vers des sites web tiers. Ces liens sont fournis pour votre convenance uniquement. Nous n'avons aucun contrôle sur le contenu de ces sites et n'assumons aucune responsabilité quant à leur contenu.</p>
+            <p>Le Site peut contenir des liens vers des sites web tiers. Ces liens sont fournis pour votre convenance
+              uniquement. Nous n'avons aucun contrôle sur le contenu de ces sites et n'assumons aucune responsabilité
+              quant à leur contenu.</p>
           </div>
-          
+
           <div class="legal-section reveal stagger-2">
             <h2>6. Modifications</h2>
-            <p>Nous nous réservons le droit de modifier ces Conditions à tout moment. Les modifications entrent en vigueur dès leur publication sur cette page.</p>
+            <p>Nous nous réservons le droit de modifier ces Conditions à tout moment. Les modifications entrent en
+              vigueur dès leur publication sur cette page.</p>
           </div>
-          
+
           <div class="legal-section reveal">
             <h2>7. Droit applicable</h2>
-            <p>Les présentes Conditions sont régies par le droit de la Côte d'Ivoire. Tout litige sera soumis à la compétence des tribunaux ivoiriens.</p>
+            <p>Les présentes Conditions sont régies par le droit de la Côte d'Ivoire. Tout litige sera soumis à la
+              compétence des tribunaux ivoiriens.</p>
           </div>
-          
+
           <div class="legal-section reveal stagger-1">
             <h2>8. Contact</h2>
             <p>Pour toute question concernant ces Conditions d'utilisation :</p>
@@ -162,19 +177,19 @@
       </div>
     </section>
   </main>
-  
+
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="../../" class="footer-logo">
-            <span>RD |</span>
+            <span> <img src="../../assets/src/logo.svg" alt="Logo de Real Dosenaterro" class="logo-icon"></span>
             <span>Real Dosenaterro</span>
           </a><strong>DOKA Degni JEAN Arnol NEHEMIE</strong>
           <p class="footer-description">Développeur web full-stack basé à Bingerville, Côte d'Ivoire.</p>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Navigation</h4>
           <ul class="footer-links">
@@ -185,18 +200,21 @@
             <li class="footer-link"><a href="../../blog/">Blog</a></li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Services</h4>
           <ul class="footer-links">
-            <li class="footer-link"><a href="../../services/">Présentation et Visibilité (Vitrine, Portfolio, Landing...)</a></li>
-            <li class="footer-link"><a href="../../services/">Contenu dynamique (Blog, Sites d'actualités ou média)</a></li>
+            <li class="footer-link"><a href="../../services/">Présentation et Visibilité (Vitrine, Portfolio,
+                Landing...)</a></li>
+            <li class="footer-link"><a href="../../services/">Contenu dynamique (Blog, Sites d'actualités ou média)</a>
+            </li>
             <li class="footer-link"><a href="../../services/">Applications web</a></li>
             <li class="footer-link"><a href="../../services/">E-commerce</a></li>
-            <li class="footer-link"><a href="../../services/">Interactifs et Communautaires (Communautaire/Forum)</a></li>
+            <li class="footer-link"><a href="../../services/">Interactifs et Communautaires (Communautaire/Forum)</a>
+            </li>
           </ul>
         </div>
-        
+
         <div>
           <h4 class="footer-title">Contact</h4>
           <ul class="footer-links">
@@ -205,7 +223,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p class="footer-copyright">&copy; 2026 Real Dosenaterro. Tous droits réservés.</p>
         <div class="footer-legal">
@@ -215,11 +233,9 @@
       </div>
     </div>
   </footer>
-  
+
   <!-- JS Personnalisé -->
   <script src="../../assets/js/main.js"></script>
 </body>
+
 </html>
-
-
-

@@ -81,9 +81,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow: auto;
   cursor: none;
-  scrollbar-width: none;
+  scrollbar-width: 0;
   /* Firefox */
 }
 
@@ -127,6 +127,17 @@ img {
 /* --------------------------------------------
    CURSEUR PERSONNALISÉ
    -------------------------------------------- */
+/* utility class used by script.js to blur all page content except the popup overlay */
+body.popup-blur > *:not(#external-popup-overlay) {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+
+/* ensure overlay itself is not affected when body gains the class */
+#external-popup-overlay {
+  filter: none;
+}
+
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -298,17 +309,9 @@ img {
   color: var(--accent-green);
 }
 
-.navbar-logo-icon {
+.logo-icon {
   width: auto;
-  height: 40px;
-  padding: 0 0.75rem;
-  background: linear-gradient(135deg, var(--accent-green), var(--primary-teal));
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  color: white;
+  height: 30px;
 }
 
 .navbar-menu {
